@@ -1,0 +1,20 @@
+{
+  "short_name": "Fyjix TTS",
+  "name": "Fyjix Text-To-Speech",
+  "icons": [
+    {
+      "src": "logo3.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo3.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

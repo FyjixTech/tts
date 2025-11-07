@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("../src/assets/wave-haikei.png");
+  background-size: cover;
+  background-position: center; */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.navbaar{
+  position: fixed;
+  width: 100vw; 
+  top: 0px;
+  /* background-color: #f3f3f3; */
+  z-index: 100;
+}
+.menu-icon{
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  top:15px;
+}
+.menu-active{
+  position: absolute;
+  top:75px;
+  left: 10vw;
+  background-color: rgb(241, 241, 241);
+  width:80vw;
+  padding: 10px;
+  border-radius: 10px;
+}
+.nav-menu{
+  color: #00565d;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+}
+.homepage{
+  margin-top: 100px;
+  background-image: url("../src/assets/Hi.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  margin-top: 3px;
+  height: 50px;
+}
+.logohome {
+  height: 90px;
+}
+
+.logoNewUser {
+  height: 90px;
+}
+.button{
+  background-color: #00565d;
+  color: aliceblue !important;
+  position: absolute;
+  right: 10px;
+}
+
+.banner{
+  background-image: url("../src/assets/stacked-waves-haikei.png");
+  background-position: bottom;
+  background-size: cover;
+
+}
+
+.newUserCard {
+  width: 30vw;
+}
+
+.login-card {
+  text-align: center;
+  padding: 2rem;
+  /* width: min(90vw, 600px);  */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Remove the .center class - not needed anymore */
+.center {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  align-content: center;
+}
+.center2{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  align-content: center;
+}
+
+.login-cover {
+  background-image: url("../src/assets/login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.header{
+  color: #00565d;
+}
+.step-img{
+  height: 80px;
+}
+.number-button{
+  background-color: #00565d;
+  color: white;
+  text-align: center;
+  font-size: larger;
+  height: 40px;
+  width: 40px;
+  border-radius: 1000000px;
+}
+.button2{
+  color: white;
+  background-color: #00565d;
+  border: #00565d 2px solid;
+
+}
+
+.button3{
+  color: white;
+  background-color: #00565d;
+  border: #fffafa 2px solid;
+}
+.desktop{
+  display: flex;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 5px;
+  background-color: #fffafa;
+  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); */
+  backdrop-filter: blur(10px);
+}
+.navbar-style-desktop{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+.phone{
+  display: none !important;
+}
+
+.marginised{
+  margin-top: 200px;
+}
+@media screen and (max-width: 786px) {
+  .homepage{
+    background-image: url("../src/assets/phone-bg.png");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: -100px;
+  }
+  .marginised{
+    margin-top: 100px !important;
+  }
+  .phone{
+    display: flex !important  ;
+    background: rgba(255, 255, 255, 0.95);
+    /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); */
+    margin-bottom: 10px;
+  }
+  .navbar-style-phone{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+  }
+  .desktop{
+    display: none;
+  }
+  .hide {
+    display: none;
+  }
+  .logohome {
+    height: 50px;
+  }
+
+  .fixed-alert {
+    width: 80vw;
+  }
+  .newUserCard {
+    width: 80vw;
+  }
+  .paymenthead {
+    font-weight: 700;
+    font-size: 28px !important;
+  }
+}
+.generatorCard {
+  width: 80vw;
+  height: 90vh;
+  padding: 10px;
+  overflow: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.btn-info-button {
+  background-color: #fcd941;
+}
+.paymenthead {
+  color: #00565d;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.paymentcardhead {
+  color: #00565d;
+  font-weight: 800 !important;
+  text-align: left;
+  font-size: larger !important;
+  
+}
+.paymentcardtext {
+  color: #4e4e4e;
+  text-align: left;
+  padding-top: 5px;
+}
+.card-height{
+  height: 100% !important;
+}
+.paymenttext {
+  color: #4e4e4e;
+  font-weight: 400;
+}
+.loader {
+  position: fixed; /* Fixed relative to viewport */
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  width: 70px;
+  height: 70px;
+  border: 10px solid #00565d;
+  border-top: 10px solid transparent;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  z-index: 9999; /* High z-index to ensure it's above everything */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
