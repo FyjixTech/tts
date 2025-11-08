@@ -465,7 +465,7 @@ const Home = () => {
             </div>
             <div className="col">
               <div className="d-flex flex-row flex-md-column align-items-center gap-2 mb-2">
-                <button
+                {/* <button
                   onClick={handleLogout}
                   className='btn btn-danger'
                   style={{
@@ -477,9 +477,9 @@ const Home = () => {
                     width: "40px"
                   }}>
                   <PowerSettingsNewRoundedIcon />
-                </button>
+                </button> */}
 
-                <Link
+                {/* <Link
                   to="/how-to-use"
                   className='btn btn-info-button'
                   style={{
@@ -491,7 +491,7 @@ const Home = () => {
                     width: "40px"
                   }}>
                   <InfoOutlineIcon />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -610,7 +610,7 @@ const Home = () => {
 
           </div> */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md-6 mb-3">
               <Box>
                 <Typography id="input-slider" gutterBottom>
@@ -651,9 +651,9 @@ const Home = () => {
                 </Grid>
               </Box>
             </div>
-          </div>
+          </div> */}
 
-          <div className="row mb-3">
+          {/* <div className="row mb-3">
             <div className="col-md-6">
               <Box>
                 <Typography id="input-slider" gutterBottom>
@@ -675,7 +675,7 @@ const Home = () => {
                 </Grid>
               </Box>
             </div>
-          </div>
+          </div> */}
 
           {/* Profile Section */}
           <div className="row mb-4">

@@ -54,7 +54,7 @@ const ChangePassword = () => {
             setLoading(true)
 
             const url = getEnvironment();
-            const api = "update-password";
+            const api = "tts-change-password";
             const link = url + api;
             const token = sessionStorage.getItem("accesstoken");
 

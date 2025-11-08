@@ -36,9 +36,13 @@ const style = {
 
 const MyAccount = () => {
     const [accountDetails, setAccountDetails] = useState([])
-    const [promptDetails, setPromptDetails] = useState([])
+    const [usedChars, setUsedChars] = useState("")
+    const [leftChars, setLeftChars] = useState("")
+    const [email, setEmail] = useState("")
+    const [plan, setPlan] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
+    const [contactNumber, setContactNumber] = useState("")
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -50,29 +54,29 @@ const MyAccount = () => {
         fetchAccountDetails()
     }, [])
 
-    const handleUpdateName =async () =>{
+    const handleUpdateName = async () => {
         setLoading(true)
         const url = getEnvironment();
-        const api = "update-user";
+        const api = "tts-update-profile";
         const link = url + api;
         const token = sessionStorage.getItem("accesstoken");
 
         const response = await fetch(link, {
             method: "POST",
             headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({ "firstName": firstName, "lastName": lastName })
-          });
+            body: JSON.stringify({ "firstName": firstName, "lastName": lastName, "contactNo": contactNumber })
+        });
 
-          const data = await response.json()
+        const data = await response.json()
 
-          if(response.ok){
-                setMessage(data.data)
-                fetchAccountDetails()
-          }
-          setLoading(false)
+        if (response.ok) {
+            setMessage(data.data)
+            fetchAccountDetails()
+        }
+        setLoading(false)
 
 
     }
@@ -81,7 +85,7 @@ const MyAccount = () => {
         setLoading(true);
 
         const url = getEnvironment();
-        const api = "get-account-details";
+        const api = "tts-get-account-details";
         const link = url + api;
         const token = sessionStorage.getItem("accesstoken");
 
@@ -95,11 +99,12 @@ const MyAccount = () => {
         const data = await response.json()
 
         if (response.ok) {
-            console.log(data)
-            setAccountDetails(data.userData[0])
-            setFirstName(data.userData[0].firstName)
-            setLastName(data.userData[0].lastName)
-            setPromptDetails(data.promptData)
+            console.log(data.data)
+            setAccountDetails(data.data)
+            setFirstName(data.data.firstName)
+            setLastName(data.data.lastName)
+            setContactNumber(data.data.phoneNumber)
+            setEmail(data.data.userEmail)
         }
         setLoading(false)
     }
@@ -117,30 +122,57 @@ const MyAccount = () => {
                 <div className="loader"></div>
             )}
             <Typography sx={{ padding: "10px" }} variant="h6" component="h2">
-                <PersonIcon /> My Account
+                My Account <EditIcon
+                    sx={{
+                        fontSize: 23,
+                        marginLeft: "20px",
+                        color: "green"
+                    }}
+                    onClick={handleOpen}
+                />
             </Typography>
             <div className="container mb-3">
                 <div className="row">
-                    <div className="col-sm-9 col-md-3 col-lg-3"><b>Name : </b> {accountDetails.firstName} {accountDetails.lastName}
-
-                    </div>
-                    <div className="col-sm-1 col-md-3 col-lg-3">
-                        <EditIcon
-                            sx={{
-                                fontSize: 20
-                            }}
-                            onClick={handleOpen}
-                        />
+                    <div className="col-sm-9 col-md-5 col-lg-5">
+                        <b>Name : </b> {accountDetails.firstName} {accountDetails.lastName}
                     </div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col"><b>Account Created At : </b> {accountDetails.createdAt} </div>
+                    <div className="col"><b>Email : </b> {accountDetails.userEmail} </div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col"><b>Account Updated At : </b> {accountDetails.updatedAt} </div>
+                    <div className="col"><b>Contact No. : </b> {accountDetails.phoneNumber} </div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col"><b>Total Prompts Generated Till Now : </b> {promptDetails} </div>
+                    <div className="col"><b>Account Created At : </b> {new Date(accountDetails.createdAt).toLocaleString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit",
+                        hour12: true,
+                    })} </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col"><b>Account Updated At : </b> {new Date(accountDetails.updatedAt).toLocaleString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit",
+                        hour12: true,
+                    })} </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col"><b>Used Characters : </b> {accountDetails.usedChars} </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col"><b>Left Characters : </b> {accountDetails.chars} </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col"><b>Generated Audio : </b> {accountDetails.generatedAudio} </div>
                 </div>
             </div>
             <Divider />
@@ -179,7 +211,7 @@ const MyAccount = () => {
                 <Fade in={open}>
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Edit Your Name
+                            Edit Your Name & Number
                         </Typography>
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
                             <div className="row">
@@ -204,12 +236,34 @@ const MyAccount = () => {
                                     />
                                 </div>
                             </div>
+                            <div className="row mt-4">
+                                <div className="col-sm-12 col-md-6 col-lg-6">
+                                    <TextField
+                                        onChange={(e) => setContactNumber(e.target.value)}
+                                        size='small'
+                                        label='Contact Number'
+                                        fullWidth
+                                        value={contactNumber}
+                                        disabled={loading}
+                                    />
+                                </div>
+                                <div className="col-sm-12 col-md-6 col-lg-6">
+                                    <TextField
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        size='small'
+                                        label='E-Mail'
+                                        fullWidth
+                                        value={email}
+                                        disabled
+                                    />
+                                </div>
+                            </div>
 
                         </Typography>
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
                             <div className="row">
                                 <div className="col-1">
-                                    <button onClick={handleUpdateName} className='btn' style={{background:"#00565d",color:"#fcd941"}}>
+                                    <button onClick={handleUpdateName} className='btn' style={{ background: "#00565d", color: "#fcd941" }}>
                                         Update
                                     </button>
                                 </div>

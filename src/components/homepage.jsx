@@ -224,9 +224,9 @@ const Homepage = () => {
                     </div>
                 </div>
                 <div className="row mt-5 mb-5">
-                    <div class="container-fluid">
-                        <div class="row ">
-                            <div class="col center mt-2">
+                    <div className="container-fluid">
+                        <div className="row ">
+                            <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
                                         <h4 className='header'><b>Starter</b></h4>
@@ -244,7 +244,7 @@ const Homepage = () => {
 
                                 </div>
                             </div>
-                            <div class="col center mt-2">
+                            <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
                                         <h4 className='header'><b>Student</b></h4>
@@ -262,7 +262,7 @@ const Homepage = () => {
 
                                 </div>
                             </div>
-                            <div class="col center mt-2">
+                            <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
                                         <h4 className='header'><b>Pro</b></h4>
@@ -280,7 +280,7 @@ const Homepage = () => {
 
                                 </div>
                             </div>
-                            <div class="col center mt-2">
+                            <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
                                         <h4 className='header'><b>Business</b></h4>
@@ -298,7 +298,7 @@ const Homepage = () => {
 
                                 </div>
                             </div>
-                            <div class="col center mt-2">
+                            <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
                                         <h4 className='header'><b>Enterprise</b></h4>
@@ -316,7 +316,7 @@ const Homepage = () => {
 
                                 </div>
                             </div>
-                            <div class="col center mt-2">
+                            <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
                                         <h4 className='header'><b>Custom</b></h4>

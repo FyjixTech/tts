@@ -138,12 +138,11 @@ const Login = () => {
 
       if (res) {
         const url = getEnvironment();
-        const api = "forgot-password";
+        const api = "tts-forgot-password";
         const link = url + api;
         const payload = {
           userEmail: email.trim(),
         };
-
         const response = await fetch(link,
           {
             method: "POST",
@@ -277,10 +276,10 @@ const Login = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
+            <span id="transition-modal-title"  className='mt-2'>
               Your Password will be reset
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+            </span>
+            <span id="transition-modal-description" className='mt-2'>
               {email ? (
                 <>
                   Are you sure you want to reset the password for {email}?
@@ -306,25 +305,25 @@ const Login = () => {
                 </>
               )}
 
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              <div className="row">
+            </span>
+            <span id="transition-modal-description" >
+              <div className="row className='mt-5'">
                 <div className="col-1">
-                  <button onClick={handleResetPassword} className='btn btn-danger'>
+                  <button onClick={handleResetPassword} className='btn mt-4 btn-danger'>
                     Reset
                   </button>
                 </div>
               </div>
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              <div className="row">
+            </span>
+            <span id="transition-modal-description" sx={{ mt: 2 }}>
+              <div className="row mt-4">
                 {message && (
                   <>
                     <span className=''>{message}</span>
                   </>
                 )}
               </div>
-            </Typography>
+            </span>
           </Box>
         </Fade>
       </Modal>

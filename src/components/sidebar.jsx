@@ -19,6 +19,8 @@ import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 import HomeIcon from '@mui/icons-material/Home';
 import ApprovalIcon from '@mui/icons-material/Approval';
 import SellIcon from '@mui/icons-material/Sell';
+import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
+
 function TemporaryDrawer() {
     const [open, setOpen] = React.useState(false);
     const [userRole, setUserRole] = React.useState(false);
@@ -62,6 +64,10 @@ function TemporaryDrawer() {
         navigate("/make-payment")
     }
 
+    const handleLogout = () => {
+        sessionStorage.clear();
+        navigate("/")
+      }
 
     
 
@@ -109,14 +115,6 @@ function TemporaryDrawer() {
                         <ListItemText> Instructions </ListItemText>
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding onClick={handleMakePayments}>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <CurrencyRupeeIcon />
-                        </ListItemIcon>
-                        <ListItemText> Make Payment </ListItemText>
-                    </ListItemButton>
-                </ListItem>
                 
                 <ListItem disablePadding onClick={handleMyPaymentsNavigation}>
                     <ListItemButton>
@@ -134,31 +132,15 @@ function TemporaryDrawer() {
                         <ListItemText> Payment Plans</ListItemText>
                     </ListItemButton>
                 </ListItem>
+                <ListItem disablePadding onClick={handleLogout}>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <PowerSettingsNewRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText> Logout</ListItemText>
+                    </ListItemButton>
+                </ListItem>
             </List>
-            {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List> */}
         </Box>
     );
 

@@ -12,14 +12,9 @@ import {
     DialogContent,
     DialogTitle,
     DialogActions,
-    FormControl,
-    InputLabel,
-    Select,
-    MenuItem,
-    FormHelperText,
-    Button,
     Typography,
 } from "@mui/material";
+import { useNavigate } from 'react-router';
 
 
 const QR_TTL_SECONDS = 15 * 60; // 15 minutes
@@ -44,7 +39,10 @@ const PaymentPlans = () => {
     const [close,setClose] = useState(false)
     const [done,setDone] = useState(true)
 
+    const navigate = useNavigate()
+
     const clearData = () => {
+        navigate("/my-payments")
         setDialogOpen(false)
     }
 
@@ -358,11 +356,11 @@ const PaymentPlans = () => {
                 </DialogContent>
 
                 <DialogActions>
-                    <button disabled={qrImage ? true : false} className="btn my-button bg-secondary text-white" onClick={clearData}>Close</button>
+                    <button disabled={close} className="btn my-button bg-secondary text-white" onClick={clearData}>Close</button>
                     <button
                         className="btn my-button bg-success text-white"
                         onClick={handleConfirmPayment}
-                        disabled={qrImage ? false : true}
+                        disabled={done}
                     >
                         Done
                     </button>
