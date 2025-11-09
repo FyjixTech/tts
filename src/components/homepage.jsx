@@ -17,6 +17,8 @@ import box from "../assets/box.png"
 import doc from "../assets/file.png"
 import pencil from "../assets/pencil.png"
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router'
+
 
 const Homepage = () => {
     const navigate = useNavigate();
@@ -376,16 +378,16 @@ const Homepage = () => {
                                 <span className='header'><b>Quick Links</b></span>
                             </div>
                             <div className="row mt-2">
-                                <span >Features</span>
+                                <Link className='linkk' to="/features">Features</Link>
                             </div>
                             <div className="row">
-                                <span >Pricing</span>
+                                <Link className='linkk' to="/pricing" >Pricing</Link>
                             </div>
                             <div className="row">
-                                <span >FAQ</span>
+                                <Link className='linkk' to="/faqs" >FAQ</Link>
                             </div>
                             <div className="row">
-                                <span >Contact</span>
+                                <Link className='linkk' to="/contact">Contact</Link>
                             </div>
 
                         </div>

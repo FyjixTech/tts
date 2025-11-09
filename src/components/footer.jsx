@@ -2,6 +2,7 @@ import React from 'react'
 import upi from "../assets/UPI-Color.png"
 import wallet from "../assets/wallet.png"
 import cardp from "../assets/creditc.png"
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -13,16 +14,16 @@ const Footer = () => {
               <span className='header'><b>Quick Links</b></span>
             </div>
             <div className="row mt-2">
-              <span >Features</span>
+              <Link className='linkk' to="/features">Features</Link>
             </div>
             <div className="row">
-              <span >Pricing</span>
+              <Link className='linkk' to="/pricing" >Pricing</Link>
             </div>
             <div className="row">
-              <span >FAQ</span>
+              <Link className='linkk' to="/faqs" >FAQ</Link>
             </div>
             <div className="row">
-              <span >Contact</span>
+              <Link className='linkk' to="/contact">Contact</Link>
             </div>
 
           </div>

@@ -18,6 +18,7 @@ import Features from "./components/features";
 import Login from "./components/login";
 import Footer from "./components/footer"
 import ScrollToTop from "./components/ScrollToTop";
+import Contact from "./components/contact";
 
 function App() {
   const location = useLocation();
@@ -43,6 +44,18 @@ function App() {
             <Navbar/>
               <div style={{marginTop:"100px"}}>
                 <Login />
+              </div>
+              <Footer/>
+            </>
+          }
+        />
+         <Route
+          path="/contact"
+          element={
+            <>
+            <Navbar/>
+              <div style={{marginTop:"100px"}}>
+                <Contact />
               </div>
               <Footer/>
             </>
@@ -162,6 +175,7 @@ function App() {
             <>
               <Navbar />
               <Pricing />
+              <Footer/>
             </>
           }
         />
@@ -171,6 +185,7 @@ function App() {
             <>
               <Navbar />
               <Faq />
+              <Footer/>
             </>
           }
         />
@@ -180,6 +195,7 @@ function App() {
             <>
               <Navbar />
               <Features />
+              <Footer/>
             </>
           }
         />
