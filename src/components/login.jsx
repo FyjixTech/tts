@@ -216,9 +216,9 @@ const Login = () => {
                     </div>
                     <div className="row mt-3">
                       <div className="col">
-                        <a href="#" onClick={handleOpen} className="text-decoration-none">
+                        <span onClick={handleOpen} className="text-decoration-none">
                           Forgot Password?
-                        </a>
+                        </span>
                       </div>
                     </div>
                     <div className="row mt-4 mb-1">

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Typography from '@mui/material/Typography';
-import { useNavigate } from 'react-router';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { TextField, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -14,7 +13,6 @@ const ChangePassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
