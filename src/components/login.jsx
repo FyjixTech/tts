@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react'
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router';
 import { getEnvironment } from "../utils.js"
-import logo from "../assets/logo3.png"
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Typography from '@mui/material/Typography';
 import { UAParser } from 'ua-parser-js';
 
 const style = {

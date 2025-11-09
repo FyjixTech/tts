@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -11,7 +10,6 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'; // My Account
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance'; // Manage Payments
-import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee'; // Payment Plans
 import { useNavigate } from 'react-router';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
@@ -59,19 +57,10 @@ function TemporaryDrawer() {
     const handleApprovePayments = () => {
         navigate("/approve-payments")
     }
-
-    const handleMakePayments = () => {
-        navigate("/make-payment")
-    }
-
     const handleLogout = () => {
         sessionStorage.clear();
         navigate("/")
       }
-
-    
-
-
     const DrawerList = (
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
             <div className="container">

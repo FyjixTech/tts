@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Typography from '@mui/material/Typography';
-import PersonIcon from '@mui/icons-material/Person';
 import { useNavigate } from 'react-router';
 import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
@@ -36,10 +35,7 @@ const style = {
 
 const MyAccount = () => {
     const [accountDetails, setAccountDetails] = useState([])
-    const [usedChars, setUsedChars] = useState("")
-    const [leftChars, setLeftChars] = useState("")
     const [email, setEmail] = useState("")
-    const [plan, setPlan] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [contactNumber, setContactNumber] = useState("")

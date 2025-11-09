@@ -7,10 +7,8 @@ import {
   ListItemText,
   TextField,
 } from '@mui/material';
-import { getEnvironment, voiceStyles } from "../utils.js";
-import Grid from '@mui/material/Grid';
+import { getEnvironment } from "../utils.js";
 import logo from "../assets/logo3.png"
-import PowerSettingsNewRoundedIcon from '@mui/icons-material/PowerSettingsNewRounded';
 import { useNavigate } from 'react-router';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
@@ -19,27 +17,12 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import * as toxicity from '@tensorflow-models/toxicity';
-import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
-import TemporaryDrawer from './sidebar.jsx';
 import Instructions from './instructions.jsx';
 import { UAParser } from 'ua-parser-js';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import PropTypes from 'prop-types';
-import Slider from '@mui/material/Slider';
-import { styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
-import MuiInput from '@mui/material/Input';
-import VolumeUp from '@mui/icons-material/VolumeUp';
-import SpeedIcon from '@mui/icons-material/Speed';
-import { Link } from 'react-router';
-import HearingIcon from '@mui/icons-material/Hearing';
 
-const Input = styled(MuiInput)`
-  width: 42px;
-`;
 
 const intensityLabels = {
   0.5: "Subtle",
@@ -64,60 +47,6 @@ ValueLabelComponent.propTypes = {
   value: PropTypes.node,
 };
 
-const iOSBoxShadow =
-  '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
-
-const IOSSlider = styled(Slider)(({ theme }) => ({
-  color: '#007bff',
-  height: 5,
-  padding: '15px 0',
-  '& .MuiSlider-thumb': {
-    height: 20,
-    width: 20,
-    backgroundColor: '#fff',
-    boxShadow: '0 0 2px 0px rgba(0, 0, 0, 0.1)',
-    '&:focus, &:hover, &.Mui-active': {
-      boxShadow: '0px 0px 3px 1px rgba(0, 0, 0, 0.1)',
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        boxShadow: iOSBoxShadow,
-      },
-    },
-    '&:before': {
-      boxShadow:
-        '0px 0px 1px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 1px 0px rgba(0,0,0,0.12)',
-    },
-  },
-  '& .MuiSlider-valueLabel': {
-    fontSize: 12,
-    fontWeight: 'normal',
-    top: -6,
-    backgroundColor: 'unset',
-    color: theme.palette.text.primary,
-    '&::before': {
-      display: 'none',
-    },
-    '& *': {
-      background: 'transparent',
-      color: '#000',
-      ...theme.applyStyles('dark', {
-        color: '#fff',
-      }),
-    },
-  },
-  '& .MuiSlider-track': {
-    border: 'none',
-    height: 5,
-  },
-  '& .MuiSlider-rail': {
-    opacity: 0.5,
-    boxShadow: 'inset 0px 0px 4px -2px #000',
-    backgroundColor: '#d0d0d0',
-  },
-  ...theme.applyStyles('dark', {
-    color: '#0a84ff',
-  }),
-}));
 const style = {
   position: 'absolute',
   top: '50%',
@@ -128,8 +57,6 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
 };
-
-const voiceStylesa = voiceStyles();
 
 const Home = () => {
   const [loading, setIsLoading] = useState(false);
@@ -143,22 +70,11 @@ const Home = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
-  const [alignment, setAlignment] = React.useState('text');
-  const [volume, setVolume] = React.useState(30);
-  const [mood, setMood] = useState("");
-  const [intensitty, setIntensitty] = useState("");
-  const [rate, setRate] = useState(0)
-  const [pitch, setPitch] = useState(1)
+  const alignment = "text";
   const [voiceinfo, setVoiceInfo] = useState("");
 
-  const [clearcheck, setClearCheck] = useState(true);
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  const handleChange = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
 
   useEffect(() => {
     fetchLanguages();
@@ -198,22 +114,6 @@ const Home = () => {
       console.error("Error fetching voices:", err);
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const handleSliderChange = (event, newValue) => {
-    setVolume(newValue);
-  };
-
-  const handleInputChange = (event) => {
-    setVolume(event.target.value === '' ? 0 : Number(event.target.value));
-  };
-
-  const handleBlur = () => {
-    if (volume < 0) {
-      setVolume(0);
-    } else if (volume > 100) {
-      setVolume(100);
     }
   };
   const fetchVoices = async (selectedLanguage = language) => {
@@ -272,22 +172,6 @@ const Home = () => {
     };
   }
 
-  const volumeMap = (val) => {
-    if (val < 20) return "x-soft";
-    if (val < 40) return "soft";
-    if (val < 60) return "medium";
-    if (val < 80) return "loud";
-    return "x-loud";
-  };
-
-  const newMap = (val) => {
-    if (val == "x-soft") return "-50%";
-    if (val == "soft") return "-25%";
-    if (val == "medium") return "0%";
-    if (val == "loud") return "+25%";
-    if (val == "x-loud") return "+50%";
-    if (val == "silent") return "-100%";
-  }
   const setVoiceInformation = async (e) => {
     const selectedVoice = e.target.value; // get actual object
     const category = (selectedVoice["VoiceTag"]["ContentCategories"]).join(",  ");
@@ -297,13 +181,7 @@ const Home = () => {
 
     setVoiceInfo(string);
   };
-  const mapPich = (val) => {
-
-    if (val == 0) return "0Hz";
-    if (val < 0) return "" + pitch + "Hz";
-    if (val > 0) return "" + pitch + "Hz";
-
-  }
+  
   const handleGenerateVoice = async () => {
     try {
       setIsLoading(true);
@@ -339,11 +217,11 @@ const Home = () => {
               "inputas": alignment,
               "lang": language,
               "ShortName": voice.ShortName,
-              "mood": mood,
-              "intensity": intensitty,
-              rate: rate,   // ✅ "+17%" or "-20%"
-              pitch: pitch, // ✅ "+2st" or "-3st"
-              volume: volume,                 // ✅ "soft", "loud", etc.
+              "mood": "",
+              "intensity": "",
+              rate: "",   // ✅ "+17%" or "-20%"
+              pitch: "", // ✅ "+2st" or "-3st"
+              volume: "",                 // ✅ "soft", "loud", etc.
               "text": text,
               "logData": getClientInfo()
             }
@@ -407,12 +285,6 @@ const Home = () => {
     }
   };
 
-
-  const handleLogout = () => {
-    sessionStorage.clear();
-    navigate("/")
-  }
-
   return (
     <>
 
@@ -433,7 +305,7 @@ const Home = () => {
         <div className="container p-4">
           <div className="row mb-4">
             <div className="col-sm-2 col-lg-2 col-md-2">
-              <img src={logo} className='logohome' />
+              <img src={logo} alt="" className='logohome' />
             </div>
             <div className="col-sm-2 col-lg-9 col-md-9">
               <Typography variant="h5" component="h1" gutterBottom>

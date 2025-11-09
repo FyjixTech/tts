@@ -33,7 +33,7 @@ const MyPayments = () => {
   const fetchPayments = async () => {
     const url = getEnvironment();
     const api = "get-my-payments";
-    const link = url + api;
+    const link = url + api; 
     try {
       const response = await fetch(link, {
         method: "POST",

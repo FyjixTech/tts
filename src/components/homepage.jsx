@@ -60,7 +60,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-2 p-3">
                         <div className="row center number-button">1</div>
                         <div className="row center mt-2">
-                            <img src={msg} className='step-img'></img>
+                            <img src={msg} className='step-img' alt=""></img>
                         </div>
                         <div className="row center mt-2">
                             <h5>Enter Your Text</h5>
@@ -70,7 +70,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-md-4 col-lg-4 bg-light mt-2  p-3">
                         <div className="row center number-button">2</div>
                         <div className="row center mt-2">
-                            <img src={www} className='step-img'></img>
+                            <img src={www} className='step-img' alt=""></img>
                         </div>
                         <div className="row center mt-2">
                             <h5>Select Language & Tone</h5>
@@ -80,7 +80,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-2  p-3">
                         <div className="row center number-button">3</div>
                         <div className="row center mt-2">
-                            <img src={vol} className='step-img'></img>
+                            <img src={vol} className='step-img' alt=""></img>
                         </div>
                         <div className="row center mt-2">
                             <center>
@@ -101,7 +101,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-6 col-md-6 mt-2">
                         <div className="row bg-light p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={fair} style={{ height: "50px" }} />
+                                <img src={fair}  alt="" style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -113,7 +113,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-6 col-md-6  mt-2">
                         <div className="row p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={clock} style={{ height: "50px" }} />
+                                <img alt="" src={clock} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -127,7 +127,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-6 col-md-6 mt-2">
                         <div className="row  p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={gift} style={{ height: "50px" }} />
+                                <img alt="" src={gift} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -139,7 +139,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-6 col-md-6 mt-2">
                         <div className="row p-4 bg-light" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={lang} style={{ height: "50px" }} />
+                                <img alt="" src={lang} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -153,7 +153,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-4 col-md-4 mt-2">
                         <div className="row bg-light p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={payment} style={{ height: "50px" }} />
+                                <img alt="" src={payment} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -165,7 +165,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-4 col-md-4 mt-2">
                         <div className="row p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={headphone} style={{ height: "50px" }} />
+                                <img alt="" src={headphone} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -177,7 +177,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-4 col-md-4 mt-2">
                         <div className="row bg-light p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={barg} style={{ height: "50px" }} />
+                                <img alt ="" src={barg} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -200,7 +200,7 @@ const Homepage = () => {
                 <div className="row mt-4">
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img src={box} height="40px" />
+                            <img alt="" src={box} height="40px" />
                         </div>
                         <div className="row center">
                             Buy Pack
@@ -208,7 +208,7 @@ const Homepage = () => {
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img src={doc} height="40px" />
+                            <img alt="" src={doc} height="40px" />
                         </div>
                         <div className="row center">
                             Get Characters
@@ -216,7 +216,7 @@ const Homepage = () => {
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img src={pencil} height="40px" />
+                            <img alt="" src={pencil} height="40px" />
                         </div>
                         <div className="row center">
                             Use As You Go
@@ -389,13 +389,13 @@ const Homepage = () => {
                         <div className="col-sm-12 col-md-4 col-lg-4 center">
                             <div className="row">
                                 <div className="col center">
-                                    <img src={upi} height="30px" />
+                                    <img alt="" src={upi} height="30px" />
                                 </div>
                                 <div className="col center">
-                                    <img src={cardp} height="30px" />
+                                    <img alt="" src={cardp} height="30px" />
                                 </div>
                                 <div className="col center">
-                                    <img src={wallet} height="30px" />
+                                    <img alt="" src={wallet} height="30px" />
                                 </div>
                             </div>
                         </div>
