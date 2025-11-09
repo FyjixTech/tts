@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { getEnvironment } from "../utils.js";
 import logo from "../assets/logo3.png"
-import { useNavigate } from 'react-router';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -67,7 +66,6 @@ const Home = () => {
   const [text, setText] = useState("");
   const [voices, setVoices] = useState([]);
   const [count, setCount] = useState(0)
-  const navigate = useNavigate();
   const [error, setError] = useState("");
 
   const alignment = "text";

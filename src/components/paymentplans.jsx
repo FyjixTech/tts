@@ -149,7 +149,7 @@ const PaymentPlans = () => {
                 <div className="row mt-4">
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img src={box} height="40px" />
+                            <img alt='' src={box} height="40px" />
                         </div>
                         <div className="row center">
                             Buy Pack
@@ -157,7 +157,7 @@ const PaymentPlans = () => {
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img src={doc} height="40px" />
+                            <img alt='' src={doc} height="40px" />
                         </div>
                         <div className="row center">
                             Get Characters
@@ -165,7 +165,7 @@ const PaymentPlans = () => {
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img src={pencil} height="40px" />
+                            <img alt='' src={pencil} height="40px" />
                         </div>
                         <div className="row center">
                             Use As You Go

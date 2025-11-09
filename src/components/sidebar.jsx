@@ -149,7 +149,6 @@ function TemporaryDrawer() {
                                 fontSize: 35,
                                 borderRadius:"10000px",
                                 padding:"5px",
-                                position: 'fixed',
                                 zIndex: 2000 
                             }} />
                     </Button>

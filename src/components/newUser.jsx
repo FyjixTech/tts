@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import logo from "../assets/logo3.png"
-import { TextField, InputAdornment, IconButton, Checkbox } from '@mui/material';
+import { TextField, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Typography from '@mui/material/Typography';
 import Backdrop from '@mui/material/Backdrop';
@@ -10,8 +10,6 @@ import Fade from '@mui/material/Fade';
 import Alert from '@mui/material/Alert';
 import { getEnvironment } from "../utils.js";
 import { Link, useNavigate } from 'react-router';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { UAParser } from 'ua-parser-js';
 
 const style = {
@@ -53,9 +51,6 @@ const NewUser = () => {
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown",
         };
     }
-    const handleChange = (event) => {
-        setIsChecked(!isChecked);
-    };
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -150,7 +145,7 @@ const NewUser = () => {
                     <div className="container p-4">
                         <div className="row mb-4">
                             <div className="col">
-                                <img src={logo} className='logoNewUser' />
+                                <img alt='' src={logo} className='logoNewUser' />
                             </div>
                             <div className="col">
                                 <Typography variant="h4" component="h1" gutterBottom>
@@ -224,7 +219,7 @@ const NewUser = () => {
                                     value="myValue" />
                             </div>
                             <div className="col-11">
-                                <a href='#' onClick={handleOpen}>Accept Terms, Conditions & Privacy Policy</a>
+                                <span onClick={handleOpen}>Accept Terms, Conditions & Privacy Policy</span>
                             </div>
                         </div>
                         <div className="row" >
