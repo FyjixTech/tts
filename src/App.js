@@ -11,14 +11,19 @@ import ChangePassword from "./components/changepassword";
 import DeleteAccount from "./components/deleteaccount";
 import Homepage from "./components/homepage";
 import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 import ApprovePayments from "./components/approvepayments";
+import Pricing from "./components/pricing";
+import Faq from "./components/faq";
+import Features from "./components/features";
+import Login from "./components/login";
+import Footer from "./components/footer"
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const location = useLocation();
-
   return (
     <div className="libre-baskerville-regular">
+      <ScrollToTop/>
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
@@ -27,6 +32,19 @@ function App() {
               <Navbar />
               <Homepage />
               {/* <Login /> */}
+            </>
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <>
+            <Navbar/>
+              <div style={{marginTop:"100px"}}>
+                <Login />
+              </div>
+              <Footer/>
             </>
           }
         />
@@ -128,12 +146,44 @@ function App() {
           path="/new-user"
           element={
             <>
-              <NewUser />
+            <Navbar/>
+            <div style={{marginTop:"100px"}}>
+              <center>           
+                 <NewUser />
+              </center>
+            </div>
+            <Footer/>
+            </>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <>
+              <Navbar />
+              <Pricing />
+            </>
+          }
+        />
+        <Route
+          path="/faqs"
+          element={
+            <>
+              <Navbar />
+              <Faq />
+            </>
+          }
+        />
+        <Route
+          path="/features"
+          element={
+            <>
+              <Navbar />
+              <Features />
             </>
           }
         />
       </Routes>
-      <Footer />
     </div>
   );
 }

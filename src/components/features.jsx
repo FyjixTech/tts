@@ -1,8 +1,7 @@
 import React from 'react'
-import Login from "./login"
-import www from "../assets/www.png"
-import msg from "../assets/comment.png"
-import vol from "../assets/volume-up-interface-symbol.png"
+import upi from "../assets/UPI-Color.png"
+import wallet from "../assets/wallet.png"
+import cardp from "../assets/creditc.png"
 import fair from "../assets/fairness.png"
 import clock from "../assets/clock.png"
 import gift from "../assets/gift.png"
@@ -10,95 +9,14 @@ import lang from "../assets/translation.png"
 import payment from "../assets/credit-card.png"
 import headphone from "../assets/customer-service-headset.png"
 import barg from "../assets/growth-graph.png"
-import upi from "../assets/UPI-Color.png"
-import wallet from "../assets/wallet.png"
-import cardp from "../assets/creditc.png"
 import box from "../assets/box.png"
 import doc from "../assets/file.png"
 import pencil from "../assets/pencil.png"
-import { useNavigate } from 'react-router'
 
-const Homepage = () => {
-    const navigate = useNavigate();
-    const naviageToLogin = () => {
-        navigate("/login")
-    }
-    const naviagteToRegister = () => {
-        navigate("/new-user")
-    }
-    return (
-        <div className='homepage'>
-            <div className='container'>
-                <div className="row">
-                    <div className="col center2">
-                        <div className="row">
-                            <h1><b>Give Your Words A Voice. In Any Language. In Any Accent. At One Fair Price.</b></h1>
-                        </div>
-                        <div className="row">
-                            <h3>
-                                Text-To-Speech tailored for everyone. Creators, Students, and Businesses.
-                            </h3>
-                        </div>
-                    </div>
-                    <div className="col mt-5">
-                        <Login />
-                    </div>
-                </div>
-
-            </div>
-
-            <div className="container marginised">
-                <hr />
-                <div className='row center mt-5 mb-5'>
-                    <center>
-                        <h2 className='header'>Try Before You Buy</h2>
-                        <h5 className='mt-4'>Type upto 500 words and hear them instantly. Sign up free to generate and download your audio</h5>
-                    </center>
-                </div>
-                <hr />
-            </div>
-
-            <div className="container mt-4 mb-5">
-                <div className="row center mt-5">
-                    <center>
-                        <h3 className='mt-3'>Text-To-Speech in 3 simple steps</h3>
-                    </center>
-                </div>
-                <div className="row mt-5 mb-5">
-                    <div className="col-sm-12 col-md-4 col-lg-4 mt-2 p-3">
-                        <div className="row center number-button">1</div>
-                        <div className="row center mt-2">
-                            <img src={msg} className='step-img' alt=""></img>
-                        </div>
-                        <div className="row center mt-2">
-                            <h5>Enter Your Text</h5>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12 col-md-4 col-lg-4 bg-light mt-2  p-3">
-                        <div className="row center number-button">2</div>
-                        <div className="row center mt-2">
-                            <img src={www} className='step-img' alt=""></img>
-                        </div>
-                        <div className="row center mt-2">
-                            <h5>Select Language & Tone</h5>
-
-                        </div>
-                    </div>
-                    <div className="col-sm-12 col-md-4 col-lg-4 mt-2  p-3">
-                        <div className="row center number-button">3</div>
-                        <div className="row center mt-2">
-                            <img src={vol} className='step-img' alt=""></img>
-                        </div>
-                        <div className="row center mt-2">
-                            <center>
-                                <h5>Generate and Download Audio</h5>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container pb-5 mt-5">
+const Features = () => {
+  return (
+    <>
+       <div className="container pb-5 mt-5">
                 <hr />
                 <div className="row center mt-5">
                     <center>
@@ -109,7 +27,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-6 col-md-6 mt-2">
                         <div className="row bg-light p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img src={fair} alt="" style={{ height: "50px" }} />
+                                <img src={fair}  alt="" style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -185,7 +103,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-4 col-md-4 mt-2">
                         <div className="row bg-light p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img alt="" src={barg} style={{ height: "50px" }} />
+                                <img alt ="" src={barg} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -347,28 +265,7 @@ const Homepage = () => {
                 </div>
             </div>
 
-            <div className='banner p-5 mt-4'>
-                <div className="container p-5 center">
-                    <div className="row center">
-                        <center>
-                            <h1 className='text-white'><b>Ready To Hear The Difference?</b></h1>
-                            <h3 className='text-white mt-4'>Sign up today and start turning your text into audio.</h3>
-                            <br />
-                            <br />
-                            <br />
-                            <div className="row center">
-                                <div className="col center mt-3">
-                                    <span className='btn button2' onClick={naviageToLogin} style={{ width: "250px" }}><h4>Try Free Demo</h4></span>
-                                </div>
-                                <div className="col center mt-3">
-                                    <span className='btn button3' onClick={naviagteToRegister}><h4>Sign Up</h4></span>
-                                </div>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <footer className='bg-light p-4'>
+            <footer className='bg-light p-4 footer'>
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12 col-md-4 col-lg-4">
@@ -392,13 +289,13 @@ const Homepage = () => {
                         <div className="col-sm-12 col-md-4 col-lg-4 center">
                             <div className="row">
                                 <div className="col center">
-                                    <img alt="" src={upi} height="30px" />
+                                    <img alt='' src={upi} height="30px" />
                                 </div>
                                 <div className="col center">
-                                    <img alt="" src={cardp} height="30px" />
+                                    <img alt='' src={cardp} height="30px" />
                                 </div>
                                 <div className="col center">
-                                    <img alt="" src={wallet} height="30px" />
+                                    <img alt='' src={wallet} height="30px" />
                                 </div>
                             </div>
                         </div>
@@ -414,10 +311,8 @@ const Homepage = () => {
 
                 </div>
             </footer>
-        </div>
-
-
-    )
+    </>
+  )
 }
 
-export default Homepage
+export default Features

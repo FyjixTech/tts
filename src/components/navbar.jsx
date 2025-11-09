@@ -33,14 +33,14 @@ const Navbar = () => {
                 <div className="container navbar-style-desktop">
                     <div className="row">
                         <div className="col-1">
-                            <img src={logo} className='logo' alt="Fyjix Logo" />
+                            <Link to="/"><img src={logo} className='logo' alt="Fyjix Logo" /></Link>
                         </div>
                         <div className="col-11 center">
-                            <div className='m-3'>Features</div>
+                            <Link className='m-3 linkk' to="/features">Features</Link>
                             <div className='m-3'>Demo</div>
-                            <div className='m-3'>Pricing</div>
-                            <div className='m-3'>FAQ</div>
-                            <div className=' button btn'>Sign up and<br />try free demo</div>
+                            <Link className='m-3 linkk' to="/pricing">Pricing</Link>
+                            <Link className='m-3 linkk' to="/faqs">FAQ</Link>
+                            <Link className=' button btn' to="/login">Sign up and<br />try free demo</Link>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
                         </div>
                         <div className="col">
                             <div  ref={profileref} onClick={toggleMenu}>
-                                <img src={menu} className='menu-icon' alt="" />
+                               <Link to="/"><img src={menu} className='menu-icon' alt="" /></Link> 
                             </div>
 
                             {isMenuOpen && (
@@ -62,7 +62,7 @@ const Navbar = () => {
                                     <div className='menu-active'>
                                         <div className="container">
                                             <div className="row center">
-                                                <Link className='nav-menu' to="">Features</Link>
+                                                <Link className='nav-menu' to="/features">Features</Link>
 
                                             </div>
                                             <div className="row center">
@@ -70,11 +70,11 @@ const Navbar = () => {
 
                                             </div>
                                             <div className="row center">
-                                                <Link className='nav-menu' to="">Pricing</Link>
+                                                <Link className='nav-menu' to="/pricing">Pricing</Link>
 
                                             </div>
                                             <div className="row center">
-                                                <Link className='nav-menu' to="">FAQ</Link>
+                                                <Link className='nav-menu' to="/faqs">FAQ</Link>
 
                                             </div>
                                             <div className="row center">
