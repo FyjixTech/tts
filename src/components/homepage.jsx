@@ -18,10 +18,6 @@ import doc from "../assets/file.png"
 import pencil from "../assets/pencil.png"
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Faq from './faq'
 
 
