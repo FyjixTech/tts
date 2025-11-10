@@ -72,6 +72,10 @@ body {
   position: absolute;
   right: 10px;
 }
+.button2{
+  background-color: #00565d;
+  color: aliceblue !important;
+}
 
 .banner{
   background-image: url("../src/assets/stacked-waves-haikei.png");

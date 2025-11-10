@@ -16,6 +16,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
+import { Alert } from '@mui/material';
 
 
 const style = {
@@ -38,17 +39,75 @@ const MyAccount = () => {
     const [email, setEmail] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
+    const [otp, setOtp] = useState("")
+    const [isVerifiedEmail, setIsVerifiedEmail] = useState(false)
     const [contactNumber, setContactNumber] = useState("")
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = React.useState(false);
+    const [emailOpen, setEmailOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const handleEmailClose = () => setEmailOpen(false);
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
         fetchAccountDetails()
-    }, [])
+    }, []);
+
+    const sendOTPOnEmail = async () => {
+        try {
+            const url = getEnvironment();
+            const api = "tts-email-otp";
+            const link = url + api;
+            const token = sessionStorage.getItem("accesstoken");
+
+            await fetch(link, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({})
+            });
+            setEmailOpen(true)
+
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleVerifyOTP = async () => {
+        try {
+            const url = getEnvironment();
+            const api = "tts-email-otp-verify";
+            const link = url + api;
+            const token = sessionStorage.getItem("accesstoken");
+
+            const response = await fetch(link, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ otp })
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                if (data.message === "success") {
+                    setIsVerifiedEmail(true)
+                    setEmailOpen(false)
+                    fetchAccountDetails();
+
+                }
+            }
+        }
+        catch (error) {
+
+        }
+    }
 
     const handleUpdateName = async () => {
         setLoading(true)
@@ -69,6 +128,7 @@ const MyAccount = () => {
         const data = await response.json()
 
         if (response.ok) {
+            setOpen(false)
             setMessage(data.data)
             fetchAccountDetails()
         }
@@ -79,7 +139,6 @@ const MyAccount = () => {
 
     const fetchAccountDetails = async () => {
         setLoading(true);
-
         const url = getEnvironment();
         const api = "tts-get-account-details";
         const link = url + api;
@@ -95,12 +154,12 @@ const MyAccount = () => {
         const data = await response.json()
 
         if (response.ok) {
-            console.log(data.data)
             setAccountDetails(data.data)
             setFirstName(data.data.firstName)
             setLastName(data.data.lastName)
             setContactNumber(data.data.phoneNumber)
             setEmail(data.data.userEmail)
+            setIsVerifiedEmail(data.data.isVerifiedEmail)
         }
         setLoading(false)
     }
@@ -127,6 +186,13 @@ const MyAccount = () => {
                     onClick={handleOpen}
                 />
             </Typography>
+            {message && (
+                <>
+                    <Alert severity='success' className='mb-2'>
+                        <span className=''>{message}</span>
+                    </Alert>
+                </>
+            )}
             <div className="container mb-3">
                 <div className="row">
                     <div className="col-sm-9 col-md-5 col-lg-5">
@@ -134,7 +200,12 @@ const MyAccount = () => {
                     </div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col"><b>Email : </b> {accountDetails.userEmail} </div>
+                    <div className="col"><b>Email : </b> {accountDetails.userEmail}
+                        {!isVerifiedEmail ? <>
+                            <span className='btn button2' onClick={sendOTPOnEmail} style={{ marginLeft: "5px" }}>Verify Email</span>
+                        </> : <></>}
+
+                    </div>
                 </div>
                 <div className="row mt-3">
                     <div className="col"><b>Contact No. : </b> {accountDetails.phoneNumber} </div>
@@ -261,6 +332,58 @@ const MyAccount = () => {
                                 <div className="col-1">
                                     <button onClick={handleUpdateName} className='btn' style={{ background: "#00565d", color: "#fcd941" }}>
                                         Update
+                                    </button>
+                                </div>
+                            </div>
+                        </Typography>
+                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                            <div className="row">
+
+
+                            </div>
+                        </Typography>
+                    </Box>
+                </Fade>
+            </Modal>
+
+
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={emailOpen}
+                onClose={handleEmailClose}
+                closeAfterTransition
+                slots={{ backdrop: Backdrop }}
+                slotProps={{
+                    backdrop: {
+                        timeout: 500,
+                    },
+                }}
+            >
+                <Fade in={emailOpen}>
+                    <Box sx={style}>
+                        <Typography id="transition-modal-title" variant="h6" component="h2">
+                            Email is sent on your email.
+                        </Typography>
+                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                            <div className="row">
+                                <div className="col-sm-12 col-md-6 col-lg-6">
+                                    <TextField
+                                        onChange={(e) => setOtp(e.target.value)}
+                                        size="small"
+                                        label="One Time Password"
+                                        fullWidth
+                                        value={otp}
+                                    />
+
+                                </div>
+                            </div>
+                        </Typography>
+                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                            <div className="row">
+                                <div className="col-3">
+                                    <button onClick={handleVerifyOTP} className='btn' style={{ background: "#00565d", color: "#fcd941" }}>
+                                        Verify Email
                                     </button>
                                 </div>
                             </div>

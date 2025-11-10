@@ -35,9 +35,11 @@ const PaymentPlans = () => {
     const [paymentPlan, setPaymentPlan] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const [emailSuccess, setEmailSuccess] = useState("");
+    const [emailVerifyMsg, setEmailVerifyMsg] = useState("");
     const [transactionId, setTransactionId] = useState("");
-    const [close,setClose] = useState(false)
-    const [done,setDone] = useState(true)
+    const [close, setClose] = useState(false)
+    const [done, setDone] = useState(true)
 
     const navigate = useNavigate()
 
@@ -124,12 +126,21 @@ const PaymentPlans = () => {
             });
 
             const data = await response.json();
-            setQrImage(data.data)
-            setClose(true)
-            setDone(false)
-            setTransactionId(data.txn_id)
-            setDialogOpen(true)
-            setQrGeneratedAt(Date.now());
+            if (data.data === "EMAIL") {
+
+                setEmailSuccess("Your enquiry has been sent.")
+            }
+            else if (data.data === "EMAILVERIFY") {
+                setEmailVerifyMsg(data.amount)
+            }
+            else {
+                setQrImage(data.data)
+                setClose(true)
+                setDone(false)
+                setTransactionId(data.txn_id)
+                setDialogOpen(true)
+                setQrGeneratedAt(Date.now());
+            }
         }
         catch (error) {
             console.error(error)
@@ -293,10 +304,20 @@ const PaymentPlans = () => {
                                     <div className="row center">
                                         ₹ Custom/character
                                     </div>
-
                                 </div>
+
                             </div>
                         </div>
+                        {emailSuccess && (
+                            <Alert severity="success" className='mt-4'>
+                                {emailSuccess}
+                            </Alert>
+                        )}
+                        {emailVerifyMsg && (
+                            <Alert severity="warning" className='mt-4'>
+                                {emailVerifyMsg}
+                            </Alert>
+                        )}
                     </div>
                 </div>
             </div>

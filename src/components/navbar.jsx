@@ -37,7 +37,7 @@ const Navbar = () => {
                         </div>
                         <div className="col-11 center">
                             <Link className='m-3 linkk' to="/features">Features</Link>
-                            <div className='m-3'>Demo</div>
+                            <Link className='m-3 linkk' to="/new-user">Demo</Link>
                             <Link className='m-3 linkk' to="/pricing">Pricing</Link>
                             <Link className='m-3 linkk' to="/faqs">FAQ</Link>
                             <Link className=' button btn' to="/login">Sign up and<br />try free demo</Link>
