@@ -124,7 +124,7 @@ const NewUser = () => {
                 }
                 else {
                     sessionStorage.setItem("accesstoken", data.access_token)
-                    nagivate("/home")
+                    nagivate("/my-account")
                 }
             }
             setIsLoading(false)

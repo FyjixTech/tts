@@ -22,7 +22,6 @@ import { UAParser } from 'ua-parser-js';
 import PropTypes from 'prop-types';
 import Tooltip from '@mui/material/Tooltip';
 
-
 const intensityLabels = {
   0.5: "Subtle",
   1: "Normal",
@@ -68,6 +67,8 @@ const Home = () => {
   const [count, setCount] = useState(0)
   const [error, setError] = useState("");
 
+  const [isEmailVerified, setIsEmailVerified] = useState(true);
+
   const alignment = "text";
   const [voiceinfo, setVoiceInfo] = useState("");
 
@@ -108,6 +109,8 @@ const Home = () => {
       const data = await response.json();
       const data2 = Object.entries(data.languages[0]).sort((a, b) => a[1].localeCompare(b[1]));
       setLanguages(data2)
+      console.log(data)
+      setIsEmailVerified(data.isVerifiedEmail)
     } catch (err) {
       console.error("Error fetching voices:", err);
     } finally {
@@ -379,6 +382,14 @@ const Home = () => {
               <ToggleButton disabled value="xml">XML...Coming Soon</ToggleButton>
             </ToggleButtonGroup>
           </div> */}
+          {!isEmailVerified?<>
+          <div className="row mb-3">
+          <Alert severity="info">
+              Please verify your email before generating audio.
+            </Alert>
+          </div>
+          
+        </>:<></>}
           <div className="row">
             {/* Language Selection */}
             <div className="col-md-6 mb-3">
@@ -387,7 +398,7 @@ const Home = () => {
                 <Select
                   label="Language"
                   value={language}
-
+                  disabled={!isEmailVerified}
                   onChange={(e) => handleLanguageChange(e.target.value)}
                 >
                   {Object.entries(languages).map(([value, label]) => (
