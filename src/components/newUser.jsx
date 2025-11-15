@@ -219,7 +219,7 @@ const NewUser = () => {
                                     value="myValue" />
                             </div>
                             <div className="col-11">
-                                <span onClick={handleOpen}>Accept Terms, Conditions & Privacy Policy</span>
+                                <span onClick={handleOpen} class="linklike">Accept Terms, Conditions & Privacy Policy</span>
                             </div>
                         </div>
                         <div className="row" >
