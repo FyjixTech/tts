@@ -264,7 +264,7 @@ const NewUser = () => {
                                         <li>
                                             <strong>Privacy Policy</strong>
                                             <ul>
-                                                <li><strong>Effective Date:</strong> 2025</li>
+                                                <li><strong>Effective Date:</strong>7th November 2025</li>
                                                 <li><strong>Operated by:</strong> Fyjix IT Solutions (India)</li>
                                                 <li>
                                                     This Privacy Policy explains how Fyjix collects, uses, stores, and protects personal information when you access or use our text-to-speech service (the "Service"). By using the Service, you agree to the practices described in this Policy. If you do not agree with this Policy, please discontinue use of the Service.
