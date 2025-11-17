@@ -105,7 +105,7 @@ const NewUser = () => {
             const payload = {
                 email: email.trim().trim(),
                 password: password.trim().trim(),
-                logData : getClientInfo()
+                logData: getClientInfo()
             };
 
             const response = await fetch(link, {
@@ -215,7 +215,7 @@ const NewUser = () => {
                                 <input class="form-check-input"
                                     type="checkbox"
                                     id="myCheckbox"
-                                    onChange={(e) => setIsChecked(e.target.checked)} 
+                                    onChange={(e) => setIsChecked(e.target.checked)}
                                     value="myValue" />
                             </div>
                             <div className="col-11">
@@ -260,184 +260,344 @@ const NewUser = () => {
                                     Fyjix does not permit generation of content promoting hate, harm, or harassment. We employ automated filters to block such material, but no system is perfect. If prohibited content is created despite these measures, responsibility lies solely with the user. By using this service, you agree not to create or distribute harmful content.
                                 </p>
                                 <p>
-                                    <ol>
-                                        <li><b>Agreement to Terms : </b> By using Fyjix Text-to-Speech, you agree to these Terms of Service (“Terms”) and the Acceptable Use Policy below. If you do not agree, do not use the Service.</li>
-                                        <li><b>Who can use the Service : </b> You must be of legal age in your jurisdiction to form a binding contract (or have a parent/guardian’s consent). You represent that you are at least 18, or if your local law permits, the minimum age agreed in your region. You must not let minors use the Service to produce content involving sexual activity or other harmful use.</li>
-                                        <li><b>What the Service does : </b> Fyjix provides on-demand audio generation from text. Generated audio is returned as a downloadable file; by default Fyjix does not store generated audio. We perform ephemeral processing for generation and automated moderation as described below. Only Flagged texts are stored with us.</li>
-                                        <li><b>User representations and warranties : </b> By using the Service you represent and warrant that:
+                                    <ul>
+                                        <li>
+                                            <strong>Privacy Policy</strong>
                                             <ul>
-                                                <li>you will not use the Service to produce content that violates laws, third-party rights, or these Terms, and</li>
-                                                <li>all information you provide is accurate.</li>
-                                            </ul>
-                                        </li>
-                                        <li><b>Acceptable Use & Prohibited Conduct, i.e., zero-tolerance list (you will be enforced) : </b>
-                                            You must not use the Service to produce content that:
-                                            <ul>
-                                                <li>facilitates or threatens violence, terrorism, or criminal acts;</li>
-                                                <li>harasses, bullies, or targets a protected class or individual (hate speech, identity-based attacks);</li>
-                                                <li>contains sexual content involving minors, exploitation, or trafficking;</li>
-                                                <li>enables fraud, phishing, or instructs the planning of wrongdoing;</li>
-                                                <li>impersonates a real person without their explicit consent (voice cloning without permission);</li>
-                                                <li>creates or distributes deepfakes meant to deceive about elections, public safety, or legal proceedings;</li>
-                                                <li>violates copyright, IP, or confidentiality;</li>
-                                                <li>violates any applicable law.</li>
-                                            </ul>
-                                        </li>
-                                        <li><b>Moderation and enforcement :</b>
-                                            <ul>
-                                                <li><i>Automated filters :</i> We run automated moderation (client-side and/or server-side). Filters are tuned to block common toxic, illegal, or otherwise disallowed content. Filters are not perfect.</li>
-                                                <li><i>Manual review :</i> We may review flagged or reported content. If we reasonably suspect misuse, we may suspend accounts, revoke access, delete data and cooperate with law enforcement.</li>
-                                                <li><i>Reporting :</i> To report content, contact [info@fyjix.com]. Provide timestamp, sample text. We aim to respond within 24 hours to abuse reports.</li>
-                                                <li><i>Sanctions :</i> Warnings, temporary suspension, permanent ban, content takedown, account termination, or legal referral.</li>
-                                            </ul>
-                                        </li>
-                                        <li><b>Liability, disclaimers, and indemnity :</b>
-                                            <ul>
-                                                <li><i>No warranties :</i> The Service is provided “AS IS” and “AS AVAILABLE.” We disclaim all implied warranties to the fullest extent permitted by law. We don’t promise that output is accurate, safe, or fit for any particular purpose.</li>
-                                                <li><i>Limitation of liability :</i> To the maximum extent permitted by law, Fyjix and its owners, officers, and employees are not liable for any indirect, incidental, consequential, punitive, or special damages arising from your use of the Service. Our maximum aggregate liability does not exceed the fees paid by you to Fyjix in the prior 12 months.</li>
-                                                <li><i>Indemnity :</i> You agree to indemnify, defend, and hold harmless Fyjix from any claim, loss, damage, liability, cost, or expense (including reasonable attorneys’ fees) arising out of:
+                                                <li><strong>Effective Date:</strong> 2025</li>
+                                                <li><strong>Operated by:</strong> Fyjix IT Solutions (India)</li>
+                                                <li>
+                                                    This Privacy Policy explains how Fyjix collects, uses, stores, and protects personal information when you access or use our text-to-speech service (the "Service"). By using the Service, you agree to the practices described in this Policy. If you do not agree with this Policy, please discontinue use of the Service.
+                                                </li>
+
+                                                    <strong>1. Information We Collect</strong>
                                                     <ul>
-                                                        <li>your use of the Service</li>
-                                                        <li>your breach of these Terms</li>
-                                                        <li>user-generated content you supply, or </li>
-                                                        <li>your violation of any law or third-party rights.</li>
+                                                        <li>We collect only the information necessary to operate the Service, maintain security, and prevent misuse.</li>
+
+                                                            <strong>1.1 Account Information</strong>
+                                                            <ul>
+                                                                <li>Email address (required)</li>
+                                                                <li>Name and contact number (optional)</li>
+                                                            </ul>
+
+                                                            <strong>1.2 Usage and Log Data</strong>
+                                                            <ul>
+                                                                <li>IP address</li>
+                                                                <li>Text input submitted for generating audio</li>
+                                                                <li>User actions on the platform</li>
+                                                                <li>Character usage logs</li>
+                                                                <li>Character count history</li>
+                                                            </ul>
+
+                                                            <strong>1.3 Payment Information</strong>
+                                                            <ul>
+                                                                <li>We do not store any payment card details.</li>
+                                                                <li>Payments are processed securely through the TJSB Bank payment gateway.</li>
+                                                            </ul>
+
+                                                            <strong>1.4 Cookies and Tracking</strong>
+                                                            <ul>
+                                                                <li>We do not use tracking cookies, analytics tools, or advertising pixels.</li>
+                                                                <li>We use session cookies only for login and secure account operation.</li>
+                                                            </ul>
+
+                                                            <strong>1.5 Generated Audio</strong>
+                                                            <ul>
+                                                                <li>We do not store, save, archive, or retain any audio generated through the Service.</li>
+                                                            </ul>
+                                                    </ul>
+
+                                                    <strong>2. How We Use Your Information</strong>
+                                                    <ul>
+                                                        <li>Account creation and authentication</li>
+                                                        <li>Operating and improving the Service</li>
+                                                        <li>Monitoring usage and maintaining platform security</li>
+                                                        <li>Detecting abuse or unauthorized activity</li>
+                                                        <li>Processing payments and providing purchased services</li>
+                                                        <li>Communicating essential service updates</li>
+                                                        <li>We do not use your information for advertising or profiling.</li>
+                                                    </ul>
+
+                                                    <strong>3. Data Retention</strong>
+                                                    <ul>
+                                                        <li>Text input logs, IP addresses, and user activity logs are retained for one year.</li>
+                                                        <li>If suspicious, abusive, or illegal behaviour is detected, relevant logs may be stored indefinitely for security, investigation, or compliance reasons.</li>
+                                                        <li>Account information is retained as long as your account is active.</li>
+                                                        <li>When a user deletes their account, we will delete associated personal data within 30 days, except logs kept for security or legal purposes.</li>
+                                                    </ul>
+
+                                                    <strong>4. Security Measures</strong>
+                                                    <ul>
+                                                        <li>Encryption of data during transmission</li>
+                                                        <li>Secure hosting infrastructure (Render)</li>
+                                                        <li>Access controls and restricted administrative access</li>
+                                                        <li>Regular platform monitoring for suspicious behaviour</li>
+                                                        <li>While we take every reasonable measure, no system is completely immune from security risks.</li>
+                                                    </ul>
+
+                                                    <strong>5. Sharing of Data</strong>
+                                                    <ul>
+                                                        <li>We do not sell, rent, or trade your information.</li>
+                                                        <li>We do not share user data with third parties except in the following cases:</li>
+
+                                                        <li>
+                                                            <strong> Payment Processing</strong>
+                                                            <ul>
+                                                                <li>Information necessary for payment processing is handled directly by TJSB Bank.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Legal Compliance</strong>
+                                                            <ul>
+                                                                <li>We may disclose information if required to:</li>
+                                                                <li>Comply with applicable law</li>
+                                                                <li>Respond to lawful requests</li>
+                                                                <li>Protect the rights and safety of Fyjix or its users</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Business Transfers</strong>
+                                                            <ul>
+                                                                <li>If Fyjix IT Solutions merges, is acquired, or undergoes restructuring, user data may be transferred to the new entity under the same privacy protections outlined here.</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>6. User Rights</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong> Account Deletion</strong>
+                                                            <ul>
+                                                                <li>You may delete your account at any time.</li>
+                                                                <li>After the request, we will delete your personal data within 30 days, except logs kept for security or compliance.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Correction of Information</strong>
+                                                            <ul>
+                                                                <li>If your stored information is incorrect, you may request correction through our support team.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Data Copy</strong>
+                                                            <ul>
+                                                                <li>We do not provide copies of internal logs or stored data.</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                <li>
+                                                    <strong>7. Children’s Privacy</strong>
+                                                    <ul>
+                                                        <li>Fyjix is intended for general use.</li>
+                                                        <li>Users under 18 should use the Service with guardian supervision.</li>
+                                                        <li>We do not knowingly collect personal data specifically targeting children.</li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>8. International Users</strong>
+                                                    <ul>
+                                                        <li>If you access the Service from outside India, you consent to processing in India where Fyjix IT Solutions operates.</li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>9. Third-Party Services</strong>
+                                                    <ul>
+                                                        <li>Our Service uses:</li>
+                                                        <li>Render for hosting</li>
+                                                        <li>TJSB Bank for payment processing</li>
+                                                        <li>These providers have their own privacy practices. We are not responsible for policies of external services.</li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>10. Changes to This Policy</strong>
+                                                    <ul>
+                                                        <li>We may update this Privacy Policy periodically.</li>
+                                                        <li>Significant changes will be posted on our website.</li>
+                                                        <li>Continued use of the Service means you accept the updated terms.</li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>11. Contact Us</strong>
+                                                    <ul>
+                                                        <li>If you have questions or requests related to privacy, contact:</li>
+                                                        <li>Email: info@fyjix.com</li>
+                                                        <li>Company: Fyjix IT Solutions</li>
+                                                        <li>Country: India</li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><b>User content & intellectual property : </b>
-                                            <ul>
-                                                <li><i>Ownership : </i>You retain ownership of your input text and the audio you generate.</li>
-                                                <li><i>License to operate : </i>You grant Fyjix a non-exclusive, worldwide, royalty-free license to the minimum extent needed to provide the Service (e.g., transient processing, caching for abuse-prevention, debugging), subject to our Privacy Policy and the data-retention terms below.</li>
-                                                <li><i>Copyright takedown : </i>If you believe your copyrighted work has been used inappropriately, follow the DMCA procedure: send a takedown notice to [info@fyjix.com]. Include: identification of the copyrighted work, identification of the allegedly infringing material, your contact info, a good-faith statement, and a physical or electronic signature.</li>
-                                            </ul>
-                                        </li>
-                                        <li><b>Payments and refunds : </b>No refunds shall be granted under any conditions. Unprocessed payments or extra payments shall be returned from bank.</li>
-                                        <li><b>Changes, suspension, and termination : </b>We can modify features or these Terms at any time; we’ll post changes and, where appropriate, notify you. We may suspend or terminate access for policy violations or legal reasons. On termination, your access ends and we may delete data per the retention schedule.</li>
-                                        <li><b>Governing law and dispute resolution : </b>These Terms are governed by the laws of India, Maharashtra, Mumbai. Disputes must be resolved in local courts or by arbitration in Mumbai, except where prohibited.</li>
-                                        <li><b>Miscellaneous : </b>
-                                            <ul>
-                                                <li><i>Severability : </i> If a provision is invalid, the remainder remains enforceable.</li>
-                                                <li><i>Entire agreement : </i> These Terms and Privacy Policy are the entire agreement between you and Fyjix.</li>
-                                                <li><i>Contact : </i>  For policy questions, contact [info@fyjix.com].</li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            We log limited technical and usage information to protect our service from abuse, fraud, and illegal activity. This may include your IP address, browser/device details, and transaction records. In cases of suspected misuse, we may link this data to your account, retain it for investigation, and share it with law enforcement when required.
-                                        </li>
-                                    </ol>
-                                </p>
-                                <p>
-                                    <b>ACCEPTABLE USE</b>
-                                </p>
-                                <ul>
-                                    <li>Allowed (examples): harmless narration, public-domain voice styles, educational use, accessibility conversions, non-consensual content that is clearly fictional and not targeting a real person. Eg: "What a beautiful picture. Keep it up!","I think you did a great job on this!"</li>
-                                    <li>Disallowed (examples): Identity Attack, Obscene/Sexual, Insult, Threat, Hate Speech, Toxic. Eg: "I hate people like you.","You're disgusting.","I'll find you and make you pay for this.","You're a total idiot.","How can you be so dumb?"," Send me nudes right now.","People of your kind shouldn't be allowed here."</li>
-                                </ul>
-                                <p>
-                                    <b>PRIVACY POLICY</b>
-                                </p>
-                                We value privacy. Fyjix does not permanently store your generated audio or raw prompts by default. We may perform ephemeral processing to generate the audio and may retain minimal, anonymized metadata for abuse prevention and legal compliance. We won’t sell your personal data.
-                                <ul>
-                                    <li><b>Controller and contact : </b> Fyjix is the data controller. Contact: [info@fyjix.com]. For legal requests or data subject requests, email that address.</li>
-                                    <li><b>What we collect and why : </b>
-                                        <ul>
-                                            <li><i>Input content (text you submit) : </i>
-                                                <ul>
-                                                    <li>Purpose: On-the-fly TTS generation and automated moderation.</li>
-                                                    <li>Storage: By default, we do not permanently store full prompts or audio. Prompts are processed in-memory or transiently.</li>
-                                                </ul>
-                                            </li>
-                                            <li>Generated audio :
-                                                <ul>
-                                                    <li>Purpose: Delivered to you as a downloadable file.</li>
-                                                    <li> Storage: Not retained by default.</li>
-                                                </ul>
-                                            </li>
-                                            <li>Minimal logs / metadata (abuse prevention) :
-                                                <ul>
-                                                    <li>Examples: timestamp, API key or account id, request size, hash of generated file, moderation-flag status.</li>
-                                                    <li>Purpose: Abuse detection, rate limiting, fraud prevention, compliance with law enforcement requests.</li>
-                                                    <li>Retention: [default 30 days]</li>
-                                                </ul>
-                                            </li>
-                                            <li>Billing data (abuse prevention) :
-                                                <ul>
-                                                    <li>Stored by payment processor; we do not store raw card numbers. We may store billing email and transaction metadata.</li>
-                                                </ul>
-                                            </li>
-                                            <li>Optional account data :
-                                                <ul>
-                                                    <li>If you create an account, we store username, email, and hashed password. We do not store SSNs, card numbers, or sensitive PII except as required for billing/identity verification.</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <b>How we use automated moderation & logs : </b>
-                                        <ul>
-                                            <li>We run automated content moderation to block illegal/toxic content. Moderation may be client-side or server-side. Moderation signals and flagged items may be stored temporarily to prevent repeat abuse.</li>
-                                            <li>False negatives : Filters are not perfect. We log reports and may manually review flagged content.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <b>Sharing and disclosures : </b>
-                                        <ul>
-                                            <li><i>Service providers :</i>  We may share limited data with subprocessors (cloud hosting, payment processors) under contracts.</li>
-                                            <li><i>Legal :</i>  We will disclose data to comply with law enforcement or valid legal process.</li>
-                                            <li><i>No sale :</i>  We do not sell personal data.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <b>Your rights : </b> Depending on jurisdiction, you may have rights to: access, correct, delete, restrict processing, portability, or object. To exercise rights, email [info@fyjix.com]. We will verify identity and respond within applicable legal windows.
-                                    </li>
-                                    <li><b>Data retention & deletion : </b>
-                                        <ul>
-                                            <li><i>Default : </i> ephemeral processing; minimal logs for [7 days].</li>
-                                            <li><i>Account deletion : </i> Deleting your account triggers deletion of account data and user-stored files per our retention schedule; backups may persist an additional period per disaster recovery needs. Contact us for immediate erasure requests; we will comply to the extent allowed by law.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <b>Security : </b>
-                                        <ul>
-                                            <li>We use industry-standard security measures: TLS in transit, encryption at rest where applicable, hashed passwords, principle-of-least-privilege access.</li>
-                                            <li>No system is perfect. Report suspected breaches to [info@fyjix.com] immediately.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <b>Children : </b> We do not target or knowingly collect information from children under 13 (or local minimum age). If you are a parent and discover a child’s data, contact us to remove it.
-                                    </li>
-                                    <li><b>International data transfers : </b> We may transfer data to service providers outside your country. We will ensure protections via standard contractual clauses or other lawful mechanisms.</li>
-                                    <li>
-                                        <b>Changes to this Privacy Policy :</b> We may update this policy; significant changes will be posted on our site and, where appropriate, notified to account holders.
-                                    </li>
-                                    <li><b>Data controller jurisdiction and contact : </b> Fyjix Tech IT Solutions, Navi Mumbai, info@fyjix.com.</li>
-                                    <li>
-                                        <b>Emergency / law enforcement exceptions : </b> We will comply with valid legal process and will disclose any data we have (even if minimal) to law enforcement when required. If we possess zero useful data because the Service was configured to never store anything, we will say so and produce what we can.
-                                    </li>
-                                    <li>
-                                        <b>Self-harm / threats and mandatory escalation :</b> If content indicates imminent threat to life or public safety, Fyjix reserves the right to disclose information to authorities.
-                                    </li>
-                                    <li>
-                                        <b>False-positive/negative remediation policy :</b>
-                                        <ul>
-                                            <li><i>Appeals process : </i> If a user’s request is blocked, they may file an appeal via info@fyjix.com. Appeals will be reviewed within 2 business days.</li>
-                                            <li><i>Human review : </i> We will provide human review where feasible.</li>
-                                        </ul>
-                                    </li>
 
-                                    <li><b>Security & Misuse Prevention Clause : </b>
-                                        <p>
-                                            For security, fraud prevention, and compliance with applicable laws, we automatically collect and temporarily store certain technical identifiers when you interact with the Service. This includes your IP address, device and browser information, usage logs, and API request metadata.
-                                        </p><p>
-                                            This information is retained for no longer than 30 days unless an investigation is in progress. In cases of suspected misuse, we may retain relevant records for a longer period and share them with law enforcement or payment processors as required.
-                                        </p>
-                                        <p>
-                                            This data is not used for marketing purposes and is never sold to third parties.
-                                        </p>
-                                        Data we collect may include: IP address, Browser type & version, Operating system, Device type (mobile/ desktop/ tablet), Screen resolution, Language & timezone settings, Referrer URL, API request details (timestamp, request size, voice type used).
-                                    </li>
-                                </ul>
+                                        <li>
+                                            <strong>Terms and Conditions</strong>
+                                            <ul>
+                                                <li><strong>Effective Date:</strong> 2025</li>
+                                                <li><strong>Operated by:</strong> Fyjix IT Solutions (India)</li>
+                                                <li>
+                                                    These Terms and Conditions govern your access to and use of the Fyjix text-to-speech service (the "Service"). By creating an account, accessing the platform, or using any feature of the Service, you agree to be bound by these Terms.
+                                                </li>
+
+                                                    <strong>1. Definitions</strong>
+                                                    <ul>
+                                                        <li><strong>Service</strong> refers to the Fyjix text-to-speech (TTS) platform and its features.</li>
+                                                        <li><strong>User</strong>, <strong>you</strong>, or <strong>your</strong> refers to any individual or entity using the Service.</li>
+                                                        <li><strong>We</strong>, <strong>us</strong>, or <strong>our</strong> refers to Fyjix IT Solutions.</li>
+                                                        <li><strong>Generated Audio</strong> means the audio file created using your text input.</li>
+                                                        <li><strong>Account</strong> means a registered user profile created with a verified email.</li>
+                                                    </ul>
+
+                                                    <strong>2. Eligibility</strong>
+                                                    <ul>
+                                                        <li>You must register with a valid verified email to use paid features.</li>
+                                                        <li>Users under 18 should use the Service with guardian consent.</li>
+                                                    </ul>
+
+                                                    <strong>3. User Accounts</strong>
+                                                    <ul>
+                                                        <li>Registration with a verified email is required.</li>
+                                                        <li>We store:</li>
+                                                        <li>Email (mandatory)</li>
+                                                        <li>Name and contact number (optional)</li>
+                                                        <li>You are responsible for your login credentials and all activity under your account.</li>
+                                                    </ul>
+
+                                                    <strong>4. Services Provided</strong>
+                                                    <ul>
+                                                        <li>Fyjix provides online text-to-speech generation in multiple languages and accents.</li>
+                                                        <li>A demo feature allows limited free use before purchasing character packs.</li>
+                                                    </ul>
+
+                                                    <strong>5. Payments, Pricing, and Refunds</strong>
+                                                    <ul>
+                                                        <li>Payments are processed through the TJSB Bank payment gateway.</li>
+                                                        <li>All purchases are non-refundable.</li>
+                                                        <li>Characters never expire.</li>
+                                                        <li>Refunds may be issued only if a verified system error prevented service delivery.</li>
+                                                        <li>Price changes may occur and continued use implies acceptance.</li>
+                                                    </ul>
+
+                                                    <strong>6. Licensing and Ownership of Generated Audio</strong>
+                                                    <ul>
+                                                        <li>You retain full commercial ownership of all Generated Audio.</li>
+                                                        <li>We do not claim rights over your audio.</li>
+                                                        <li>You are responsible for ensuring your text and use of the audio comply with applicable laws.</li>
+                                                    </ul>
+
+                                                    <strong>7. User Content and Data Handling</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>7.1 Text Input, Logs, and Stored Data</strong>
+                                                            <ul>
+                                                                <li>To operate the Service, maintain security, and prevent abuse, we store the following:</li>
+                                                                <li>IP addresses</li>
+                                                                <li>User actions performed on the platform</li>
+                                                                <li>Text input submitted for generating audio</li>
+                                                                <li>Character usage logs</li>
+                                                                <li>Character count history</li>
+                                                                <li>Email (mandatory)</li>
+                                                                <li>Name and contact number (optional)</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>7.2 Audio Storage</strong>
+                                                            <ul>
+                                                                <li>We do not store any Generated Audio.</li>
+                                                                <li>Audio is processed and delivered but not saved, retained, or archived by Fyjix.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>7.3 Payment Information</strong>
+                                                            <ul>
+                                                                <li>We do not collect or store payment card details.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>7.4 Privacy</strong>
+                                                            <ul>
+                                                                <li>Data is handled according to our Privacy Policy.</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>8. Acceptable Use Policy</strong>
+                                                    <ul>
+                                                        <li>You must not use the Service to:</li>
+                                                        <li>Create deepfake voices or misleading impersonations.</li>
+                                                        <li>Produce or distribute political content.</li>
+                                                        <li>Generate hate speech, harassment, threats, or abusive material.</li>
+                                                        <li>Conduct illegal, fraudulent, or harmful activities.</li>
+                                                        <li>Violate copyright or third-party intellectual property rights.</li>
+                                                        <li>Reverse-engineer or misuse the Service.</li>
+                                                        <li>Violations may lead to account suspension or termination without refund.</li>
+                                                    </ul>
+
+                                                    <strong>9. Intellectual Property</strong>
+                                                    <ul>
+                                                        <li>All software, system design, branding, and platform features belong to Fyjix IT Solutions.</li>
+                                                        <li>Users may not exploit or reproduce the platform’s underlying intellectual property.</li>
+                                                        <li>Generated Audio remains your property.</li>
+                                                    </ul>
+
+                                                    <strong>10. Service Availability & Changes</strong>
+                                                    <ul>
+                                                        <li>We aim for high uptime but do not guarantee uninterrupted access.</li>
+                                                        <li>The Service may be modified or discontinued at any time.</li>
+                                                    </ul>
+
+                                                    <strong>11. Disclaimer of Warranties</strong>
+                                                    <ul>
+                                                        <li>The Service is provided "as-is" and "as-available".</li>
+                                                        <li>We do not guarantee error-free operation or specific performance outcomes.</li>
+                                                    </ul>
+
+                                                    <strong>12. Limitation of Liability</strong>
+                                                    <ul>
+                                                        <li>To the fullest extent permitted by law:</li>
+                                                        <li>Fyjix is not liable for indirect or consequential damages.</li>
+                                                        <li>Total liability is limited to the amount paid in the previous 30 days.</li>
+                                                        <li>No liability applies for misuse or violations of these Terms.</li>
+                                                    </ul>
+
+                                                    <strong>13. Suspension or Termination</strong>
+                                                    <ul>
+                                                        <li>Accounts may be suspended or terminated for violations of the Terms.</li>
+                                                        <li>Remaining characters may be forfeited without refund.</li>
+                                                    </ul>
+
+                                                    <strong>14. Third-Party Links</strong>
+                                                    <ul>
+                                                        <li>We are not responsible for third-party sites linked through the platform.</li>
+                                                    </ul>
+
+                                                    <strong>15. Governing Law</strong>
+                                                    <ul>
+                                                        <li>These Terms are governed by the laws of India.</li>
+                                                        <li>Any disputes will be resolved exclusively in Indian courts.</li>
+                                                    </ul>
+
+                                                    <strong>16. Contact Information</strong>
+                                                    <ul>
+                                                        <li>For support, billing inquiries, or legal concerns, contact:</li>
+                                                        <li>Email: info@fyjix.com</li>
+                                                        <li>Company: Fyjix IT Solutions</li>
+                                                        <li>Country: India</li>
+                                                    </ul>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </p>
                             </Typography>
                         </Box>
                     </Fade>
