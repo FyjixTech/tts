@@ -6,6 +6,7 @@ import { getEnvironment } from '../utils';
 const Contact = () => {
 
   const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccessMessage] = useState("")
@@ -37,6 +38,7 @@ const Contact = () => {
         return;
       }
 
+      setLoading(true)
       const response = await fetch(link, {
         method: "POST",
         headers: {
@@ -55,16 +57,18 @@ const Contact = () => {
         const data = await response.json();
         setErrorMessage("")
         setSuccessMessage(data.data)
+        setLoading(false)
       }
       else {
+        setLoading(false)
         const data = await response.json();
         setSuccessMessage("")
         setErrorMessage(data.data)
       }
+      setLoading(false)
     }
-
-
     catch (error) {
+      setLoading(false)
       setSuccessMessage("")
       setErrorMessage("We Apologize for the inconvenience." + error.message)
     }
@@ -73,6 +77,9 @@ const Contact = () => {
   return (
     <div>
       <div className="container">
+      {loading && (
+        <div className="loader"></div>
+      )}
         <div className="card p-5 shadow-lg">
           <div className="row">
             <center><h3>Contact Us</h3></center>
