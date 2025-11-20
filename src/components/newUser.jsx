@@ -39,6 +39,7 @@ const NewUser = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [error, setError] = useState("");
+
     function getClientInfo() {
         const parser = new UAParser();
         const result = parser.getResult();
@@ -160,6 +161,7 @@ const NewUser = () => {
                         <div className="row mb-4">
                             <TextField
                                 fullWidth
+                                type='email'
                                 onChange={(e) => handleEmailChange(e.target.value)}
                                 label="Email"
                                 variant="outlined"

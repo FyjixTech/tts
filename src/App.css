@@ -51,6 +51,10 @@ body {
   text-align: center;
   margin: 10px;
 }
+
+.btn-primary{
+  background-color: #00565d !important;
+}
 .homepage{
   margin-top: 100px;
   background-image: url("../src/assets/Hi.png");
