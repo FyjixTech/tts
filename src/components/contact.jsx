@@ -87,8 +87,8 @@ const Contact = () => {
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-6">
               <div className="row mt-3">
-                <div className="col-2" style={{ display: "flex", alignItems: 'center' }}>Name:</div>
-                <div className="col-10">
+                <div className="col-sm-12 col-md-2 col-lg-2" style={{ display: "flex", alignItems: 'center' }}>Name:</div>
+                <div className="col-sm-12 col-md-10 col-lg-10">
                   <TextField
                     placeholder='Name'
                     label="Name"
@@ -100,8 +100,8 @@ const Contact = () => {
                 </div>
               </div>
               <div className="row mt-3">
-                <div className="col-2" style={{ display: "flex", alignItems: 'center' }}>Email:</div>
-                <div className="col-10">
+                <div className="col-sm-12 col-md-2 col-lg-2" style={{ display: "flex", alignItems: 'center' }}>Email:</div>
+                <div className="col-sm-12 col-md-10 col-lg-10">
                   <TextField
                     placeholder='Email'
                     label="Email"
@@ -114,8 +114,8 @@ const Contact = () => {
                 </div>
               </div>
               <div className="row mt-3">
-                <div className="col-2">Message:</div>
-                <div className="col-10">
+                <div className="col-sm-12 col-md-2 col-lg-2" style={{ display: "flex", alignItems: 'center' }}>Message:</div>
+                <div className="col-sm-12 col-md-10 col-lg-10">
                   <TextField
                     placeholder='Message'
                     label="Message"
