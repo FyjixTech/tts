@@ -32,17 +32,31 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Audio Generator</title>
+    <title>Fyjix Text-To-Speech</title>
+    <meta property="og:title" content="Audio Generator - AI Text to Speech" />
+    <meta
+      property="og:description"
+      content="Convert text to lifelike audio for creators, businesses & educators. Fast, affordable & premium."
+    />
+    <meta property="og:image" content="https://tts.fyjix.com/preview.png" />
+    <meta property="og:url" content="https://tts.fyjix.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9W9DPMY54Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-9W9DPMY54Q"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-9W9DPMY54Q');
-</script>
+    gtag("config", "G-9W9DPMY54Q");
+  </script>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
