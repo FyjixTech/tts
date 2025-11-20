@@ -33,7 +33,7 @@ const Homepage = () => {
         <div className='homepage'>
             <div className='container'>
                 <div className="row">
-                    <div className="col center2">
+                    <div className="col-sm-12 col-lg-6 col-md-6 center2">
                         <div className="row">
                             <h1><b>Give Your Words A Voice. In Any Language. In Any Accent. At One Fair Price.</b></h1>
                         </div>
@@ -43,7 +43,7 @@ const Homepage = () => {
                             </h3>
                         </div>
                     </div>
-                    <div className="col mt-5">
+                    <div className="col-sm-12 col-lg-6 col-md-6 mt-5">
                         <Login />
                     </div>
                 </div>
