@@ -410,7 +410,7 @@ const Homepage = () => {
                         </div>
                         <div className="col-sm-12 col-md-4 col-lg-4 center">
                             <div className="row">
-                                © 2025 Fyjix IT Solutions
+                                © 2025 Fyjix IT Solutions. Powered By Alareet Enterprises.
                                 <br />
                                 <span className='header'>Any Language. One Fair Price.</span>
                             </div>
