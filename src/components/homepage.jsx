@@ -19,6 +19,8 @@ import pencil from "../assets/pencil.png"
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router'
 import Faq from './faq'
+import add from "../assets/add.png"
+import verified from "../assets/verified.png"
 
 
 const Homepage = () => {
@@ -55,8 +57,39 @@ const Homepage = () => {
                 <div className='row center mt-5 mb-5'>
                     <center>
                         <h2 className='header'>Try Before You Buy</h2>
-                        <h5 className='mt-4'>Type upto 500 words and hear them instantly. Sign up free to generate and download your audio</h5>
+                        <h5 className='mt-4'>Type upto 5000 words and hear them instantly. Sign up free to generate and download your audio</h5>
                     </center>
+                </div>
+                <hr />
+            </div>
+
+            <div className="container">
+                <div className='row center mt-5 mb-5'>
+                    <center>
+                        <h2 className='header'>Get Started</h2>
+                    </center>
+                </div>
+                <div className='row center mt-5 mb-5 w-100'>
+                    <div className="col-sm-12 col-lg-6 col-md-6 p-3 bg-light center">
+                        <div className="container">
+                        <div className="row center">
+                            <img src={add} loading='lazy' className='step-img' alt=""></img>
+                        </div>
+                        <div className="row center mt-3">
+                            <h5>Register With Your Email</h5>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="col-sm-12 col-lg-6 col-md-6 p-3 center">
+                        <div className="container">
+                        <div className="row center">
+                            <img src={verified} loading='lazy' className='step-img' alt=""></img>
+                        </div>
+                        <div className="row center mt-3">
+                            <h5>Verify Your Email</h5>
+                        </div>
+                        </div>
+                    </div>
                 </div>
                 <hr />
             </div>
@@ -138,7 +171,7 @@ const Homepage = () => {
                     <div className="col-sm-12 col-lg-6 col-md-6 mt-2">
                         <div className="row  p-4" style={{ height: "100%" }}>
                             <div className="col center">
-                                <img alt="" loading='lazy'  src={gift} style={{ height: "50px" }} />
+                                <img alt="" loading='lazy' src={gift} style={{ height: "50px" }} />
                             </div>
                             <div className="col center">
                                 <h5>
@@ -227,7 +260,7 @@ const Homepage = () => {
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4 mt-4 p-3">
                         <div className="row center">
-                            <img alt=""loading='lazy' src={pencil} height="40px" />
+                            <img alt="" loading='lazy' src={pencil} height="40px" />
                         </div>
                         <div className="row center">
                             Use As You Go
@@ -372,7 +405,7 @@ const Homepage = () => {
                 </div>
             </div>
             <div className="container pb-5 mt-5">
-                <Faq/>
+                <Faq />
             </div>
             <footer className='bg-light p-4'>
                 <div className="container">
