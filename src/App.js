@@ -16,15 +16,18 @@ import Pricing from "./components/pricing";
 import Faq from "./components/faq";
 import Features from "./components/features";
 import Login from "./components/login";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Contact from "./components/contact";
+import Privacypolicy from "./components/privacypolicy";
+import Refundpolicy from "./components/refundpolicy";
+import Termsconditions from "./components/termsconditions";
 
 function App() {
   const location = useLocation();
   return (
     <div className="libre-baskerville-regular">
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
@@ -41,23 +44,23 @@ function App() {
           path="/login"
           element={
             <>
-            <Navbar/>
-              <div style={{marginTop:"100px"}}>
+              <Navbar />
+              <div style={{ marginTop: "100px" }}>
                 <Login />
               </div>
-              <Footer/>
+              <Footer />
             </>
           }
         />
-         <Route
+        <Route
           path="/contact"
           element={
             <>
-            <Navbar/>
-              <div style={{marginTop:"100px"}}>
+              <Navbar />
+              <div style={{ marginTop: "100px" }}>
                 <Contact />
               </div>
-              <Footer/>
+              <Footer />
             </>
           }
         />
@@ -159,13 +162,13 @@ function App() {
           path="/new-user"
           element={
             <>
-            <Navbar/>
-            <div style={{marginTop:"100px"}}>
-              <center>           
-                 <NewUser />
-              </center>
-            </div>
-            <Footer/>
+              <Navbar />
+              <div style={{ marginTop: "100px" }}>
+                <center>
+                  <NewUser />
+                </center>
+              </div>
+              <Footer />
             </>
           }
         />
@@ -175,7 +178,7 @@ function App() {
             <>
               <Navbar />
               <Pricing />
-              <Footer/>
+              <Footer />
             </>
           }
         />
@@ -185,7 +188,7 @@ function App() {
             <>
               <Navbar />
               <Faq />
-              <Footer/>
+              <Footer />
             </>
           }
         />
@@ -195,7 +198,44 @@ function App() {
             <>
               <Navbar />
               <Features />
-              <Footer/>
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/terms-and-conditions"
+          element={
+            <>
+              <Navbar />
+              <div className="container" style={{marginTop:"100px"}}>
+              <Termsconditions />
+              </div>  
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/privacy-policy"
+          element={
+            <>
+              <Navbar />
+              <div className="container" style={{marginTop:"100px"}}>
+              <Privacypolicy />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/refund-policy"
+          element={
+            <>
+              <Navbar />
+              <div className="container" style={{marginTop:"100px"}}>
+              <Refundpolicy />
+              </div>
+              <Footer />
             </>
           }
         />
