@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div className="navbaar">
-      
+
       {/* Desktop Navbar */}
       <div className="desktop">
         <div className="container navbar-style-desktop">
@@ -43,8 +43,10 @@ const Navbar = () => {
 
             <div className="col-11 center">
               <Link className="m-3 linkk" to="/features">Features</Link>
+              <Link className="m-3 linkk" to="/languages">Languages</Link>
               <Link className="m-3 linkk" to="/new-user">Demo</Link>
               <Link className="m-3 linkk" to="/pricing">Pricing</Link>
+              <Link className="m-3 linkk" to="/about-fyjix-tts">About</Link>
               <Link className="m-3 linkk" to="/faqs">FAQ</Link>
 
               <Link className="button btn" to="/login">
@@ -88,11 +90,19 @@ const Navbar = () => {
                     </div>
 
                     <div className="row center">
+                      <Link className="nav-menu" to="/languages">Languages</Link>
+                    </div>
+
+                    <div className="row center">
                       <Link className="nav-menu" to="/new-user">Demo</Link>
                     </div>
 
                     <div className="row center">
                       <Link className="nav-menu" to="/pricing">Pricing</Link>
+                    </div>
+
+                    <div className="row center">
+                      <Link className="m-3 linkk" to="/about-fyjix-tts">About</Link>
                     </div>
 
                     <div className="row center">

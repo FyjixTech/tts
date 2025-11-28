@@ -22,6 +22,8 @@ import Contact from "./components/contact";
 import Privacypolicy from "./components/privacypolicy";
 import Refundpolicy from "./components/refundpolicy";
 import Termsconditions from "./components/termsconditions";
+import About from "./components/about";
+import Languages from "./components/languages";
 
 function App() {
   const location = useLocation();
@@ -235,6 +237,30 @@ function App() {
               <div className="container" style={{marginTop:"100px"}}>
               <Refundpolicy />
               </div>
+              <Footer />
+            </>
+          }
+        />
+          <Route
+          path="/about-fyjix-tts"
+          element={
+            <>
+              <Navbar />
+              <div className="container" style={{marginTop:"100px"}}>
+              <About />
+              </div>  
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/languages"
+          element={
+            <>
+              <Navbar />
+              <div className="container" style={{marginTop:"100px"}}>
+              <Languages />
+              </div>  
               <Footer />
             </>
           }

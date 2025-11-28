@@ -21,8 +21,50 @@ import { Link } from 'react-router'
 import Faq from './faq'
 import add from "../assets/add.png"
 import verified from "../assets/verified.png"
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+        backgroundColor: '#00565d',
+        color: theme.palette.common.white,
+        fontSize:18
+    },
+    [`&.${tableCellClasses.body}`]: {
+        fontSize: 17,
+    },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+        border: 0,
+    },
+}));
+
+function createData(name, calories, fat, carbs) {
+    return { name, calories, fat, carbs };
+}
+
+
+const rows = [
+    createData('Starter', '₹50', '750', '₹0.066'),
+    createData('Student', '₹250', '5,000', '₹0.05'),
+    createData('Pro', '₹1,000', '25,000', '₹0.04'),
+    createData('Business', '₹3,000', '80,000', '₹0.037'),
+    createData('Enterprise', '₹5,000', '1,50,000', '₹0.033'),
+    createData('Custom', '₹Custom', 'Custom', '₹Custom'),
+];
 const Homepage = () => {
     const navigate = useNavigate();
     const naviageToLogin = () => {
@@ -269,7 +311,31 @@ const Homepage = () => {
                 </div>
                 <div className="row mt-5 mb-5">
                     <div className="container-fluid">
-                        <div className="row ">
+                        <TableContainer component={Paper}>
+                            <Table sx={{ minWidth: 500 }} aria-label="customized table">
+                                <TableHead>
+                                    <TableRow>
+                                        <StyledTableCell>Name</StyledTableCell>
+                                        <StyledTableCell align="center">Price</StyledTableCell>
+                                        <StyledTableCell align="center">Characters</StyledTableCell>
+                                        <StyledTableCell align="center">Per Character Cost</StyledTableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <StyledTableRow key={row.name}>
+                                            <StyledTableCell component="th" scope="row">
+                                                {row.name}
+                                            </StyledTableCell>
+                                            <StyledTableCell align="center">{row.calories}</StyledTableCell>
+                                            <StyledTableCell align="center">{row.fat}</StyledTableCell>
+                                            <StyledTableCell align="center">{row.carbs}</StyledTableCell>
+                                        </StyledTableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                        {/* <div className="row ">
                             <div className="col center mt-2">
                                 <div className="card p-4" style={{ height: "100%" }}>
                                     <div className="row center">
@@ -378,7 +444,7 @@ const Homepage = () => {
 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
