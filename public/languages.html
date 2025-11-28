@@ -966,21 +966,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Optional: hook up real samples via JS -->
-    <script>
-      // Example: wire these buttons to your actual sample audio URLs / Edge TTS calls.
-      // Replace the console.log with your own player logic.
-      document.querySelectorAll(".sample-button").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var lang = btn.getAttribute("data-lang");
-          console.log("Play sample for language:", lang);
-          alert(lang)
-          // Example idea:
-          // const audio = new Audio(`/samples/${lang}.mp3`);
-          // audio.play();
-        });
-      });
-    </script>
   </body>
 </html>
