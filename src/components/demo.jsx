@@ -213,7 +213,7 @@ const Demo = () => {
                                 {audio && (
                                     <>
                                         <div className="row">
-                                        <center><h4>Login or Sign Up to download your audio.</h4></center>
+                                            <center><h4>Login or Sign Up to download your audio.</h4></center>
 
                                             <div className="col-sm-12 col-lg-1 col-md-1">
                                                 <audio
@@ -320,7 +320,7 @@ const Demo = () => {
                                         variant="contained"
                                         color="primary"
                                         onClick={handleGenerateVoice}
-                                        disabled={loading || audio !==null}
+                                        disabled={loading || audio !== null}
                                     >
                                         Generate Voice
                                     </Button>
