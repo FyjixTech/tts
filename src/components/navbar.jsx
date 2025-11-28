@@ -49,7 +49,7 @@ const Navbar = () => {
               <Link className="m-3 linkk" to="/about-fyjix-tts">About</Link>
               <Link className="m-3 linkk" to="/faqs">FAQ</Link>
 
-              <Link className="button btn" to="/new-user">
+              <Link className="button btn" to="/free-demo">
                 <h5>Try Free Demo</h5>
               </Link>
             </div>
@@ -110,7 +110,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="row center">
-                      <Link className="nav-menu" to="/new-user">
+                      <Link className="nav-menu" to="/free-demo">
                        Try free demo
                       </Link>
                     </div>

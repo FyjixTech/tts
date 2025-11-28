@@ -29,13 +29,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Demo from "../components/demo"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#00565d',
         color: theme.palette.common.white,
-        fontSize:18
+        fontSize: 18
     },
     [`&.${tableCellClasses.body}`]: {
         fontSize: 17,
@@ -85,6 +85,8 @@ const Homepage = () => {
                             <h3>
                                 Text-To-Speech tailored for everyone. Creators, Students, and Businesses.
                             </h3>
+                            <br />
+                            <a className='button2 btn' href='#demo-try'><h4>Try Free Demo</h4></a>
                         </div>
                     </div>
                     <div className="col-sm-12 col-lg-6 col-md-6 mt-5">
@@ -103,6 +105,11 @@ const Homepage = () => {
                     </center>
                 </div>
                 <hr />
+            </div>
+
+            <div className="container">
+                <section id="demo-try"></section>
+                <Demo />
             </div>
 
             <div className="container">

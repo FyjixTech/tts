@@ -260,7 +260,9 @@ function App() {
             <>
               <Navbar />
               <div className="container" style={{marginTop:"100px"}}>
+              <Languages/>
               </div>  
+
               <Footer />
             </>
           }
@@ -270,7 +272,9 @@ function App() {
           element={
             <>
               <Navbar />
+              <div style={{marginTop:"100px"}}>
               <Demo />
+              </div>
               <Footer />
             </>
           }

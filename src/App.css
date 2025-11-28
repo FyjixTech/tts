@@ -21,7 +21,11 @@ body {
   top: 0px;
   left: 0px;
   /* background-color: #f3f3f3; */
-  z-index: 100;
+  z-index: 10000;
+}
+.audio{
+  background-image: url("../src/assets/audioImage.png");
+  background-size: contain;
 }
 .linkk{
   color: black;
