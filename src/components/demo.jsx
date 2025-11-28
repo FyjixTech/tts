@@ -215,7 +215,7 @@ const Demo = () => {
                                         <div className="row">
                                         <center><h4>Login or Sign Up to download your audio.</h4></center>
 
-                                            <div className="col-1">
+                                            <div className="col-sm-12 col-lg-1 col-md-1">
                                                 <audio
                                                     ref={audioRef}
                                                     src={audio}
@@ -230,7 +230,7 @@ const Demo = () => {
                                                     )}
                                                 </div>
                                             </div>
-                                            <div className="col-11 audio">
+                                            <div className="col-sm-12 col-lg-11 col-md-11 audio">
                                             </div>
                                         </div>
                                     </>
@@ -299,7 +299,7 @@ const Demo = () => {
                                     inputProps={{ maxLength: 150 }}
                                     variant="outlined"
                                     multiline
-                                    rows={10}
+                                    rows={5}
                                 />
                             </div>
 
