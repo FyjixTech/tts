@@ -23,6 +23,7 @@ import Privacypolicy from "./components/privacypolicy";
 import Refundpolicy from "./components/refundpolicy";
 import Termsconditions from "./components/termsconditions";
 import About from "./components/about";
+import Languages from "./components/languages";
 import Demo from "./components/demo";
 
 function App() {
@@ -253,7 +254,17 @@ function App() {
             </>
           }
         />
-      
+        <Route
+          path="/languages"
+          element={
+            <>
+              <Navbar />
+              <div className="container" style={{marginTop:"100px"}}>
+              </div>  
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/free-demo"
           element={
