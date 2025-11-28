@@ -44,13 +44,13 @@ const Navbar = () => {
             <div className="col-11 center">
               <Link className="m-3 linkk" to="/features">Features</Link>
               <Link className="m-3 linkk" to="/languages">Languages</Link>
-              <Link className="m-3 linkk" to="/new-user">Demo</Link>
+              <Link className="m-3 linkk" to="/free-demo">Demo</Link>
               <Link className="m-3 linkk" to="/pricing">Pricing</Link>
               <Link className="m-3 linkk" to="/about-fyjix-tts">About</Link>
               <Link className="m-3 linkk" to="/faqs">FAQ</Link>
 
-              <Link className="button btn" to="/login">
-                Sign up and<br />try free demo
+              <Link className="button btn" to="/new-user">
+                <h5>Try Free Demo</h5>
               </Link>
             </div>
           </div>
@@ -94,7 +94,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="row center">
-                      <Link className="nav-menu" to="/new-user">Demo</Link>
+                      <Link className="nav-menu" to="/free-demo">Demo</Link>
                     </div>
 
                     <div className="row center">
@@ -110,8 +110,8 @@ const Navbar = () => {
                     </div>
 
                     <div className="row center">
-                      <Link className="nav-menu" to="/login">
-                        Sign up and<br />try free demo
+                      <Link className="nav-menu" to="/new-user">
+                       Try free demo
                       </Link>
                     </div>
 

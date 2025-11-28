@@ -23,7 +23,7 @@ import Privacypolicy from "./components/privacypolicy";
 import Refundpolicy from "./components/refundpolicy";
 import Termsconditions from "./components/termsconditions";
 import About from "./components/about";
-import Languages from "./components/languages";
+import Demo from "./components/demo";
 
 function App() {
   const location = useLocation();
@@ -253,14 +253,13 @@ function App() {
             </>
           }
         />
+      
         <Route
-          path="/languages"
+          path="/free-demo"
           element={
             <>
               <Navbar />
-              <div className="container" style={{marginTop:"100px"}}>
-              <Languages />
-              </div>  
+              <Demo />
               <Footer />
             </>
           }
