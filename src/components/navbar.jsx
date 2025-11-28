@@ -102,7 +102,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="row center">
-                      <Link className="m-3 linkk" to="/about-fyjix-tts">About</Link>
+                      <Link className="nav-menu" to="/about-fyjix-tts">About</Link>
                     </div>
 
                     <div className="row center">
