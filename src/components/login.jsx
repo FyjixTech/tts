@@ -118,7 +118,7 @@ const Login = () => {
   };
 
   const navigateToNewUser = () => {
-    navigate("/new-user")
+    navigate("/app/new-user")
   }
 
 

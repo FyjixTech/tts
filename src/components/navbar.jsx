@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import logo from "../assets/logo3.png";
-import menu from "../assets/equalizer.png";
-import { Link } from 'react-router';
+import logo from '../assets/logo3.png';
+import menu from '../assets/equalizer.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,111 +18,139 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
     };
   }, []);
 
   return (
-    <div className="navbaar">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm w-100 pt-3 pb-3">
+      <div className="container-fluid px-4">
+        {/* Logo */}
+        <a className="navbar-brand" href="https://tts.fyjix.com/">
+          <img 
+            src={logo} 
+            alt="Fyjix Logo" 
+            height="48" 
+            className="d-inline-block align-top"
+          />
+        </a>
 
-      {/* Desktop Navbar */}
-      <div className="desktop">
-        <div className="container navbar-style-desktop">
-          <div className="row">
-            <div className="col-1">
-              <Link to="/">
-                <img src={logo} className="logo" alt="Fyjix Logo" />
-              </Link>
+        {/* Desktop Navigation */}
+        <div className="collapse navbar-collapse d-none d-lg-flex justify-content-center align-content-center">
+          <ul className="navbar-nav gap-3 fs-5 fw-semibold">
+            <li className="nav-item">
+              <a className="mt-2 nav-link text-black" href="https://tts.fyjix.com/features">
+                Features
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="mt-2  nav-link text-black" href="https://tts.fyjix.com/languages">
+                Languages
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="mt-2 nav-link text-black" href="https://tts.fyjix.com/pricing">
+                Pricing
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="mt-2 nav-link text-black" href="https://tts.fyjix.com/about">
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="mt-2 nav-link text-black" href="https://tts.fyjix.com/faq">
+                FAQ
+              </a>
+            </li>
+            <li className="mt-2 nav-item">
+            <a 
+                className="btn btn-primary px-6 py-2 rounded-lg transition" 
+                href="https://tts.fyjix.com/free-demo"
+              >
+                Try Free Demo
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Mobile Menu Icon */}
+        <div className="d-lg-none position-relative" ref={profileref}>
+          <img
+            src={menu}
+            alt="menu"
+            height="32"
+            width="32"
+            className="cursor-pointer"
+            onClick={toggleMenu}
+            style={{ cursor: 'pointer' }}
+          />
+
+          {/* Mobile Dropdown Menu */}
+          {isMenuOpen && (
+            <div
+              className="position-absolute end-0 mt-2 bg-white rounded shadow-lg py-2"
+              style={{ 
+                width: '12rem', 
+                zIndex: 1050,
+                right: 0 
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <a 
+                className="dropdown-item px-3 py-2 text-black" 
+                href="https://tts.fyjix.com/features"
+              >
+                Features
+              </a>
+              
+              <a 
+                className="dropdown-item px-3 py-2 text-black" 
+                href="https://tts.fyjix.com/languages"
+              >
+                Languages
+              </a>
+              
+              <a 
+                className="dropdown-item px-3 py-2 text-black" 
+                href="https://tts.fyjix.com/pricing"
+              >
+                Pricing
+              </a>
+              
+              <a 
+                className="dropdown-item px-3 py-2 text-black" 
+                href="https://tts.fyjix.com/about"
+              >
+                About
+              </a>
+              
+              <a 
+                className="dropdown-item px-3 py-2 text-black" 
+                href="https://tts.fyjix.com/faq"
+              >
+                FAQ
+              </a>
+
+              <a 
+                className="btn btn-primary px-6 py-2 rounded-lg transition" 
+                href="https://tts.fyjix.com/free-demo"
+              >
+                Try Free Demo
+              </a>
+              
+              
+            
             </div>
-
-            <div className="col-11 center">
-              <Link className="m-3 linkk" to="/features">Features</Link>
-              <Link className="m-3 linkk" to="/languages">Languages</Link>
-              <Link className="m-3 linkk" to="/free-demo">Demo</Link>
-              <Link className="m-3 linkk" to="/pricing">Pricing</Link>
-              <Link className="m-3 linkk" to="/about-fyjix-tts">About</Link>
-              <Link className="m-3 linkk" to="/faqs">FAQ</Link>
-
-              <Link className="button btn" to="/free-demo">
-                <h5>Try Free Demo</h5>
-              </Link>
-            </div>
-          </div>
+          )}
         </div>
       </div>
-
-      {/* Mobile Navbar */}
-      <div className="phone">
-        <div className="container navbar-style-phone">
-          <div className="row">
-
-            {/* Logo */}
-            <div className="col">
-              <Link to="/">
-                <img src={logo} className="logo" alt="Fyjix Logo" />
-              </Link>
-            </div>
-
-            {/* Menu Icon */}
-            <div className="col" ref={profileref}>
-              <img
-                src={menu}
-                className="menu-icon"
-                alt="menu"
-                onClick={toggleMenu}
-              />
-
-              {isMenuOpen && (
-                <div
-                  className="menu-active"
-                  onClick={(e) => e.stopPropagation()} // Prevent closing on inside click
-                >
-                  <div className="container">
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/features">Features</Link>
-                    </div>
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/languages">Languages</Link>
-                    </div>
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/free-demo">Demo</Link>
-                    </div>
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/pricing">Pricing</Link>
-                    </div>
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/about-fyjix-tts">About</Link>
-                    </div>
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/faqs">FAQ</Link>
-                    </div>
-
-                    <div className="row center">
-                      <Link className="nav-menu" to="/free-demo">
-                       Try free demo
-                      </Link>
-                    </div>
-
-                  </div>
-                </div>
-              )}
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    </nav>
   );
 };
 

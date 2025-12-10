@@ -27,9 +27,11 @@ function App() {
           path="/"
           element={
             <>
-              <div style={{ marginTop: "100px" }}>
+            <Navbar/>
+              <div style={{ marginTop: "30px" }}>
                 <Login />
               </div>
+              <Footer/>
             </>
           }
         />
@@ -133,7 +135,7 @@ function App() {
           element={
             <>
               <Navbar />
-              <div style={{ marginTop: "100px" }}>
+              <div style={{ marginTop: "20px" }}>
                 <center>
                   <NewUser />
                 </center>

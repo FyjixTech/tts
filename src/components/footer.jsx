@@ -2,7 +2,6 @@ import React from 'react'
 import upi from "../assets/UPI-Color.png"
 import wallet from "../assets/wallet.png"
 import cardp from "../assets/creditc.png"
-import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -14,16 +13,16 @@ const Footer = () => {
               <span className='header'><b>Quick Links</b></span>
             </div>
             <div className="row mt-2">
-              <Link className='linkk' to="/features">Features</Link>
+              <a className='linkk' href="https://tts.fyjix.com/features">Features</a>
             </div>
             <div className="row">
-              <Link className='linkk' to="/pricing" >Pricing</Link>
+              <a className='linkk' href="https://tts.fyjix.com/pricing" >Pricing</a>
             </div>
             <div className="row">
-              <Link className='linkk' to="/faqs" >FAQ</Link>
+              <a className='linkk' href="https://tts.fyjix.com/faqs" >FAQ</a>
             </div>
             <div className="row">
-              <Link className='linkk' to="/contact">Contact</Link>
+              <a className='linkk' href="https://tts.fyjix.com/contact">Contact</a>
             </div>
 
 
@@ -33,13 +32,13 @@ const Footer = () => {
               <span className='header'><b>Policies</b></span>
             </div>
             <div className="row">
-              <Link className='linkk' to="/terms-and-conditions">Terms & Conditions</Link>
+              <a className='linkk' href="https://tts.fyjix.com/terms-and-conditions">Terms & Conditions</a>
             </div>
             <div className="row">
-              <Link className='linkk' to="/privacy-policy">Privacy Policy</Link>
+              <a className='linkk' href="https://tts.fyjix.com/privacy-policy">Privacy Policy</a>
             </div>
             <div className="row">
-              <Link className='linkk' to="/refund-policy">Refund Policy</Link>
+              <a className='linkk' href="https://tts.fyjix.com/refund-policy">Refund Policy</a>
             </div>
 
 
@@ -58,10 +57,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-sm-12 col-md-3 col-lg-3 center">
-            <div className="row">
-              © 2025 Fyjix IT Solutions. Powered By Alareet Enterprises.
-              <br />
-              <span className='header'>Any Language. One Fair Price.</span>
+          <div className="">
+              <p className="text-sm text-gray-600">
+                © 2025 Fyjix IT Solutions. Powered By Alareet Enterprises.
+              </p>
+              <p className="font-bold header">Any Language. One Fair Price.</p>
             </div>
 
           </div>
