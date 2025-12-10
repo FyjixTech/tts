@@ -9,22 +9,11 @@ import MyPayments from "./components/mypayments";
 import Instructions from "./components/instructions";
 import ChangePassword from "./components/changepassword";
 import DeleteAccount from "./components/deleteaccount";
-import Homepage from "./components/homepage";
 import Navbar from "./components/navbar";
 import ApprovePayments from "./components/approvepayments";
-import Pricing from "./components/pricing";
-import Faq from "./components/faq";
-import Features from "./components/features";
 import Login from "./components/login";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/ScrollToTop";
-import Contact from "./components/contact";
-import Privacypolicy from "./components/privacypolicy";
-import Refundpolicy from "./components/refundpolicy";
-import Termsconditions from "./components/termsconditions";
-import About from "./components/about";
-import Languages from "./components/languages";
-import Demo from "./components/demo";
 
 function App() {
   const location = useLocation();
@@ -32,43 +21,21 @@ function App() {
     <div className="libre-baskerville-regular">
       <ScrollToTop />
       <Routes location={location} key={location.pathname}>
+       
+
         <Route
           path="/"
           element={
             <>
-              <Navbar />
-              <Homepage />
-              {/* <Login /> */}
-            </>
-          }
-        />
-
-        <Route
-          path="/login"
-          element={
-            <>
-              <Navbar />
               <div style={{ marginTop: "100px" }}>
                 <Login />
               </div>
-              <Footer />
             </>
           }
         />
+        
         <Route
-          path="/contact"
-          element={
-            <>
-              <Navbar />
-              <div style={{ marginTop: "100px" }}>
-                <Contact />
-              </div>
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/home"
+          path="/app/home"
           element={
             <>
               <TemporaryDrawer />
@@ -79,7 +46,7 @@ function App() {
           }
         />
         <Route
-          path="/my-account"
+          path="/app/my-account"
           element={
             <>
               <TemporaryDrawer />
@@ -91,7 +58,7 @@ function App() {
         />
 
         <Route
-          path="/how-to-use"
+          path="/app/how-to-use"
           element={
             <>
               <TemporaryDrawer />
@@ -103,7 +70,7 @@ function App() {
         />
 
         <Route
-          path="/change-password"
+          path="/app/change-password"
           element={
             <>
               <TemporaryDrawer />
@@ -115,7 +82,7 @@ function App() {
         />
 
         <Route
-          path="/delete-account"
+          path="/app/delete-account"
           element={
             <>
               <TemporaryDrawer />
@@ -127,7 +94,7 @@ function App() {
         />
 
         <Route
-          path="/my-payments"
+          path="/app/my-payments"
           element={
             <>
               <TemporaryDrawer />
@@ -138,7 +105,7 @@ function App() {
           }
         />
         <Route
-          path="/payment-plans"
+          path="/app/payment-plans"
           element={
             <>
               <TemporaryDrawer />
@@ -150,7 +117,7 @@ function App() {
         />
 
         <Route
-          path="/approve-payments"
+          path="/app/approve-payments"
           element={
             <>
               <TemporaryDrawer />
@@ -162,7 +129,7 @@ function App() {
         />
 
         <Route
-          path="/new-user"
+          path="/app/new-user"
           element={
             <>
               <Navbar />
@@ -170,110 +137,6 @@ function App() {
                 <center>
                   <NewUser />
                 </center>
-              </div>
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/pricing"
-          element={
-            <>
-              <Navbar />
-              <Pricing />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/faqs"
-          element={
-            <>
-              <Navbar />
-              <Faq />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/features"
-          element={
-            <>
-              <Navbar />
-              <Features />
-              <Footer />
-            </>
-          }
-        />
-
-        <Route
-          path="/terms-and-conditions"
-          element={
-            <>
-              <Navbar />
-              <div className="container" style={{marginTop:"100px"}}>
-              <Termsconditions />
-              </div>  
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/privacy-policy"
-          element={
-            <>
-              <Navbar />
-              <div className="container" style={{marginTop:"100px"}}>
-              <Privacypolicy />
-              </div>
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/refund-policy"
-          element={
-            <>
-              <Navbar />
-              <div className="container" style={{marginTop:"100px"}}>
-              <Refundpolicy />
-              </div>
-              <Footer />
-            </>
-          }
-        />
-          <Route
-          path="/about-fyjix-tts"
-          element={
-            <>
-              <Navbar />
-              <div className="container" style={{marginTop:"100px"}}>
-              <About />
-              </div>  
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/languages"
-          element={
-            <>
-              <Navbar />
-              <div className="container" style={{marginTop:"100px"}}>
-              <Languages/>
-              </div>  
-
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/free-demo"
-          element={
-            <>
-              <Navbar />
-              <div style={{marginTop:"100px"}}>
-              <Demo />
               </div>
               <Footer />
             </>
