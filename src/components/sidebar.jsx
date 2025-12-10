@@ -35,27 +35,27 @@ function TemporaryDrawer() {
     };
 
     const handleMyAccountNavigation = () => {
-        navigate("/my-account")
+        navigate("/app/my-account")
     }
 
     const handleMyPaymentsNavigation = () => {
-        navigate("/my-payments")
+        navigate("/app/my-payments")
     }
 
     const handlePaymentPlansNavigation = () => {
-        navigate("/payment-plans")
+        navigate("/app/payment-plans")
     }
 
     const handleInstructionNavigation = () => {
-        navigate("/how-to-use")
+        navigate("/app/how-to-use")
     }
 
     const handleHomeNavigation = () => {
-        navigate("/home")
+        navigate("/app/home")
     }
 
     const handleApprovePayments = () => {
-        navigate("/approve-payments")
+        navigate("/app/approve-payments")
     }
     const handleLogout = () => {
         sessionStorage.clear();

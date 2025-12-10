@@ -86,7 +86,7 @@ const ApprovePayments = () => {
       }
     } catch (error) {
       console.error("Fetch payments error:", error);
-      navigate("/error");
+      navigate("/app/error");
     } finally {
       setLoading(false);
     }

@@ -44,7 +44,7 @@ const PaymentPlans = () => {
     const navigate = useNavigate()
 
     const clearData = () => {
-        navigate("/my-payments")
+        navigate("/app/my-payments")
         setDialogOpen(false)
     }
 

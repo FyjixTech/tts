@@ -39,7 +39,7 @@ const Login = () => {
     // Fixed the logic - use && instead of ||
     if (existingToken && existingToken !== "" && existingToken !== "null" && existingToken !== "undefined") {
       console.log("User already logged in, redirecting...");
-      navigate("/home");
+      navigate("/app/home");
     }
   }, [navigate]);
   function getClientInfo() {
@@ -96,7 +96,7 @@ const Login = () => {
         if (data.msg === "success") {
           sessionStorage.setItem("accesstoken", data.data);
           sessionStorage.setItem("userRole", data.userRole);
-          navigate("/home");
+          navigate("/app/home");
         } else {
           setError(data.data || "Login failed");
         }

@@ -165,11 +165,11 @@ const MyAccount = () => {
     }
 
     const handleChangePasswordNavigation = () => {
-        navigate("/change-password")
+        navigate("/app/change-password")
     }
 
     const handleDeleteAccountNavigation = () => {
-        navigate("/delete-account")
+        navigate("/app/delete-account")
     }
     return (
         <>
