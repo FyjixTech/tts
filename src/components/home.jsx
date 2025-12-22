@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { Autocomplete } from "@mui/material";
 import {
   Select,
   FormControl,
@@ -6,21 +7,21 @@ import {
   MenuItem,
   ListItemText,
   TextField,
-} from '@mui/material';
+} from "@mui/material";
 import { getEnvironment } from "../utils.js";
-import logo from "../assets/logo3.png"
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import * as toxicity from '@tensorflow-models/toxicity';
-import Alert from '@mui/material/Alert';
-import Instructions from './instructions.jsx';
-import { UAParser } from 'ua-parser-js';
-import PropTypes from 'prop-types';
-import Tooltip from '@mui/material/Tooltip';
+import logo from "../assets/logo3.png";
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import * as toxicity from "@tensorflow-models/toxicity";
+import Alert from "@mui/material/Alert";
+import Instructions from "./instructions.jsx";
+import { UAParser } from "ua-parser-js";
+import PropTypes from "prop-types";
+import Tooltip from "@mui/material/Tooltip";
 
 const intensityLabels = {
   0.5: "Subtle",
@@ -34,7 +35,11 @@ function ValueLabelComponent(props) {
   const { children, value } = props;
 
   return (
-    <Tooltip enterTouchDelay={0} placement="top" title={intensityLabels[value] || value}>
+    <Tooltip
+      enterTouchDelay={0}
+      placement="top"
+      title={intensityLabels[value] || value}
+    >
       {children}
     </Tooltip>
   );
@@ -46,13 +51,13 @@ ValueLabelComponent.propTypes = {
 };
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 300,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
 };
 
@@ -64,7 +69,7 @@ const Home = () => {
   const [voice, setVoice] = useState("");
   const [text, setText] = useState("");
   const [voices, setVoices] = useState([]);
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const [error, setError] = useState("");
 
   const [isEmailVerified, setIsEmailVerified] = useState(true);
@@ -80,15 +85,15 @@ const Home = () => {
   }, []);
 
   const handleRefreshButtonClick = async () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   const fetchLanguages = async () => {
     try {
       setIsLoading(true);
-      setLanguage("")
-      setVoice("")
-      setVoices([])
+      setLanguage("");
+      setVoice("");
+      setVoices([]);
       const url = getEnvironment();
       const api = "tts-get-all-languages";
       const link = url + api;
@@ -98,7 +103,7 @@ const Home = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -107,10 +112,12 @@ const Home = () => {
       }
 
       const data = await response.json();
-      const data2 = Object.entries(data.languages[0]).sort((a, b) => a[1].localeCompare(b[1]));
-      setLanguages(data2)
-      console.log(data)
-      setIsEmailVerified(data.isVerifiedEmail)
+      const data2 = Object.entries(data.languages[0]).sort((a, b) =>
+        a[1].localeCompare(b[1])
+      );
+      setLanguages(data2);
+      console.log(data);
+      setIsEmailVerified(data.isVerifiedEmail);
     } catch (err) {
       console.error("Error fetching voices:", err);
     } finally {
@@ -128,13 +135,13 @@ const Home = () => {
       const response = await fetch(link, {
         method: "POST",
         body: JSON.stringify({
-          "filters": {
-            "Locale": selectedLanguage || ""
-          }
+          filters: {
+            Locale: selectedLanguage || "",
+          },
         }),
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -156,15 +163,17 @@ const Home = () => {
     fetchVoices(newLanguage);
   };
   const handleTextChange = (teext) => {
-    setText(teext)
-    setCount(teext.length)
-  }
+    setText(teext);
+    setCount(teext.length);
+  };
 
   function getClientInfo() {
     const parser = new UAParser();
     const result = parser.getResult();
     return {
-      browser: `${result.browser.name || "Unknown"} ${result.browser.version || ""}`,
+      browser: `${result.browser.name || "Unknown"} ${
+        result.browser.version || ""
+      }`,
       os_info: `${result.os.name || "Unknown"} ${result.os.version || ""}`,
       device_type: result.device.type || "Desktop", // could be 'mobile', 'tablet', etc.
       screen_resolution: `${window.screen.width}x${window.screen.height}`,
@@ -175,14 +184,15 @@ const Home = () => {
 
   const setVoiceInformation = async (e) => {
     const selectedVoice = e.target.value; // get actual object
-    const category = (selectedVoice["VoiceTag"]["ContentCategories"]).join(",  ");
-    const personalities = (selectedVoice["VoiceTag"]["VoicePersonalities"]).join(", ");
+    const category = selectedVoice["VoiceTag"]["ContentCategories"].join(",  ");
+    const personalities =
+      selectedVoice["VoiceTag"]["VoicePersonalities"].join(", ");
 
     const string = `This voice is suitable for ${category}, providing an appropriate tone and style for those contexts. It carries a personality that is ${personalities}, designed to make interactions sound more engaging and natural.`;
 
     setVoiceInfo(string);
   };
-  
+
   const handleGenerateVoice = async () => {
     try {
       setIsLoading(true);
@@ -199,9 +209,10 @@ const Home = () => {
         const predictions = await model.classify([text]);
         // Check for toxic content
         for (let i = 0; i < 7; i++) {
-
           if (predictions[i].results[0].probabilities[1] > 0.1) {
-            setError("That input triggered our content filters. Fyjix keeps your data private — but we draw the line at hate or harm. Try again respectfully.");
+            setError(
+              "That input triggered our content filters. Fyjix keeps your data private — but we draw the line at hate or harm. Try again respectfully."
+            );
             setIsLoading(false);
             return; // Exit early if toxic content is detected
           }
@@ -213,45 +224,37 @@ const Home = () => {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(
-            {
-              "inputas": alignment,
-              "lang": language,
-              "ShortName": voice.ShortName,
-              "mood": "",
-              "intensity": "",
-              rate: "",   // ✅ "+17%" or "-20%"
-              pitch: "", // ✅ "+2st" or "-3st"
-              volume: "",                 // ✅ "soft", "loud", etc.
-              "text": text,
-              "logData": getClientInfo()
-            }
-          )
+          body: JSON.stringify({
+            inputas: alignment,
+            lang: language,
+            ShortName: voice.ShortName,
+            mood: "",
+            intensity: "",
+            rate: "", // ✅ "+17%" or "-20%"
+            pitch: "", // ✅ "+2st" or "-3st"
+            volume: "", // ✅ "soft", "loud", etc.
+            text: text,
+            logData: getClientInfo(),
+          }),
         });
 
         if (!response.ok) {
-          const rr = await response.json()
-          console.log(rr.error)
-          setError(rr.error)
+          const rr = await response.json();
+          console.log(rr.error);
+          setError(rr.error);
           throw new Error("Failed to generate audio");
-        }
-        else{
+        } else {
           const blob = await response.blob();
           const url = window.URL.createObjectURL(blob);
-  
+
           const a = document.createElement("a");
           a.href = url;
           a.download = "fyjix_voice.mp3";
           a.click();
-  
+
           window.URL.revokeObjectURL(url);
-
         }
-
-
-       
-      }
-      else {
+      } else {
         // Only proceed with API call if toxicity check passed
         // const response = await fetch(link, {
         //   method: "POST",
@@ -261,24 +264,19 @@ const Home = () => {
         //   },
         //   body: JSON.stringify({ "text": text, "ShortName": voice.ShortName, "logData": getClientInfo() })
         // });
-
         // if (!response.ok) {
         //   const data = await response.json();
         //   setError(data.data)
         //   throw new Error("Failed to generate audio");
         // }
-
         // const blob = await response.blob();
         // const url = window.URL.createObjectURL(blob);
-
         // const a = document.createElement("a");
         // a.href = url;
         // a.download = "fyjix_voice.mp3";
         // a.click();
-
         // window.URL.revokeObjectURL(url); // Clean up
       }
-
     } catch (err) {
       console.error(err);
     } finally {
@@ -288,25 +286,16 @@ const Home = () => {
 
   return (
     <>
-
-      {loading && (
-        <div className="loader"></div>
-      )}
-
-
+      {loading && <div className="loader"></div>}
 
       <div className="container sticky-top">
         <div className="row">
-          {error && (
-            <Alert severity="error">
-              {error}
-            </Alert>
-          )}
+          {error && <Alert severity="error">{error}</Alert>}
         </div>
         <div className="container p-4">
           <div className="row mb-4">
             <div className="col-sm-2 col-lg-2 col-md-2">
-              <img src={logo} alt="" className='logohome' />
+              <img src={logo} alt="" className="logohome" />
             </div>
             <div className="col-sm-2 col-lg-9 col-md-9">
               <Typography variant="h5" component="h1" gutterBottom>
@@ -330,7 +319,6 @@ const Home = () => {
               >
                 <Fade in={open}>
                   <Box sx={style}>
-
                     <Instructions />
                   </Box>
                 </Fade>
@@ -382,32 +370,49 @@ const Home = () => {
               <ToggleButton disabled value="xml">XML...Coming Soon</ToggleButton>
             </ToggleButtonGroup>
           </div> */}
-          {!isEmailVerified?<>
-          <div className="row mb-3">
-          <Alert severity="info">
-              Please verify your email before generating audio.
-            </Alert>
-          </div>
-          
-        </>:<></>}
+          {!isEmailVerified ? (
+            <>
+              <div className="row mb-3">
+                <Alert severity="info">
+                  Please verify your email before generating audio.
+                </Alert>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
           <div className="row">
             {/* Language Selection */}
             <div className="col-md-6 mb-3">
-              <FormControl fullWidth variant="outlined">
-                <InputLabel>Language</InputLabel>
-                <Select
-                  label="Language"
-                  value={language}
-                  disabled={!isEmailVerified}
-                  onChange={(e) => handleLanguageChange(e.target.value)}
-                >
-                  {Object.entries(languages).map(([value, label]) => (
-                    <MenuItem key={label[0]} value={label[0]}>
-                      <ListItemText primary={label[1]} />
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+              <Autocomplete
+                options={Object.entries(languages).map(([_, label]) => ({
+                  value: label[0],
+                  label: label[1],
+                }))}
+                getOptionLabel={(option) => option.label}
+                value={
+                  language
+                    ? Object.entries(languages)
+                        .map(([_, label]) => ({
+                          value: label[0],
+                          label: label[1],
+                        }))
+                        .find((opt) => opt.value === language) || null
+                    : null
+                }
+                onChange={(_, newValue) => {
+                  handleLanguageChange(newValue ? newValue.value : "");
+                }}
+                disabled={!isEmailVerified}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Language"
+                    variant="outlined"
+                    fullWidth
+                  />
+                )}
+              />
             </div>
 
             {/* Voice Selection */}
@@ -418,8 +423,9 @@ const Home = () => {
                   label="Voice"
                   value={voice}
                   onChange={(e) => {
-                    setVoice(e.target.value)
-                    setVoiceInformation(e)}}
+                    setVoice(e.target.value);
+                    setVoiceInformation(e);
+                  }}
                   disabled={voices.length === 0}
                 >
                   <MenuItem value="">
@@ -427,7 +433,12 @@ const Home = () => {
                   </MenuItem>
                   {voices.map((district, index) => (
                     <MenuItem key={index} value={district}>
-                      <ListItemText primary={district.FriendlyName.replace("Microsoft ", "").replace("Online ", "")} />
+                      <ListItemText
+                        primary={district.FriendlyName.replace(
+                          "Microsoft ",
+                          ""
+                        ).replace("Online ", "")}
+                      />
                     </MenuItem>
                   ))}
                 </Select>
@@ -444,7 +455,6 @@ const Home = () => {
               </div>
             </>
           )}
-
 
           {/* <div className="row mb-2">
             <div className="col-md-6">
@@ -576,7 +586,6 @@ const Home = () => {
                 rows={10}
               />
             </div>
-
           </div>
 
           {/* Action Buttons */}
@@ -604,7 +613,7 @@ const Home = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
